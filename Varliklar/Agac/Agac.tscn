@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://ağaç.png" type="Texture" id=1]
-[ext_resource path="res://Agac.gd" type="Script" id=2]
-[ext_resource path="res://AgacVurulma.wav" type="AudioStream" id=3]
+[ext_resource path="res://Varliklar/Agac/Resim/ağaç.png" type="Texture" id=1]
+[ext_resource path="res://Varliklar/Agac/Kode/Agac.gd" type="Script" id=2]
+[ext_resource path="res://Varliklar/Agac/Ses/AgacVurulma.wav" type="AudioStream" id=3]
 [ext_resource path="res://Gölge.png" type="Texture" id=4]
 
 [sub_resource type="Animation" id=1]

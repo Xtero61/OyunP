@@ -1,9 +1,9 @@
 [gd_scene load_steps=39 format=2]
 
-[ext_resource path="res://Alet/Balta/Balta.gd" type="Script" id=1]
-[ext_resource path="res://Alet/axe_p_att.png" type="Texture" id=2]
-[ext_resource path="res://Alet/Balta/axeİdRun.png" type="Texture" id=3]
-[ext_resource path="res://swosh.wav" type="AudioStream" id=4]
+[ext_resource path="res://Varliklar/Aletler/Balta/Kode/Balta.gd" type="Script" id=1]
+[ext_resource path="res://Varliklar/Aletler/Ortak Resim/axe_p_att.png" type="Texture" id=2]
+[ext_resource path="res://Varliklar/Aletler/Balta/Resim/axeİdRun.png" type="Texture" id=3]
+[ext_resource path="res://Varliklar/Aletler/Ortak Ses/swosh.wav" type="AudioStream" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "AxeattArka"

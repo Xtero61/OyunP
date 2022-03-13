@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Gölge.png" type="Texture" id=1]
-[ext_resource path="res://Taş.png" type="Texture" id=2]
-[ext_resource path="res://Tas.gd" type="Script" id=3]
-[ext_resource path="res://AgacVurulma.wav" type="AudioStream" id=4]
+[ext_resource path="res://Varliklar/Tas/Resim/Taş.png" type="Texture" id=2]
+[ext_resource path="res://Varliklar/Tas/Kode/Tas.gd" type="Script" id=3]
+[ext_resource path="res://Varliklar/Agac/Ses/AgacVurulma.wav" type="AudioStream" id=4]
 
 [sub_resource type="Animation" id=1]
 length = 0.6
