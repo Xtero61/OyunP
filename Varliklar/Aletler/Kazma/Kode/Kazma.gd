@@ -4,6 +4,7 @@ var state = MOVE
 
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
+onready var player = get_parent()
 
 enum{
 	MOVE,
@@ -22,12 +23,10 @@ func _physics_process(delta) :
 
 func move_state(delta) :
 
-	var input_vector = Vector2.ZERO
-	input_vector.x = Input.get_action_strength("SağaYürüme") - Input.get_action_strength("SolaYürüme")
-	input_vector.y = Input.get_action_strength("AşağıYürüme") - Input.get_action_strength("YukarıYürüme")
-	input_vector = input_vector.normalized()
+	var input_vector = player.get_movement_vector()
+	var run = player.get_run_state()
 	
-	if input_vector != Vector2.ZERO :
+	if run :
 		animationTree.set("parameters/Saldırı/blend_position", input_vector)
 		animationTree.set("parameters/Duruş/blend_position", input_vector)
 		animationTree.set("parameters/Yürüme/blend_position", input_vector)
@@ -44,3 +43,6 @@ func attack_state():
 
 func attack_Move():
 	state = MOVE
+	
+func nesne_sil():
+	queue_free()

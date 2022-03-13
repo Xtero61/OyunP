@@ -5,107 +5,129 @@ const MAX_SPEED = 120
 const FRICTION = 500
 const ROLL_SPEED = 225
 
-var El = "Dolu"
-var roll_vector = Vector2.DOWN
-var velocity = Vector2.ZERO
-var state = MOVE 
-var max_dist = 12
+var El: bool = false
+var El_Esya
+var movement_vector : Vector2 = Vector2.ZERO
+var run : bool = false
+var velocity: Vector2 = Vector2.ZERO
+var state : int = IDLE
+var max_dist : int = 12
 
 onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
-onready var colliision = $Position2D/Hitbox/CollisionShape2D
+onready var collision = $Position2D/Hitbox/CollisionShape2D
+onready var balta = preload("res://Varliklar/Aletler/Balta/Balta.tscn")
+onready var kazma = preload("res://Varliklar/Aletler/Kazma/Kazma.tscn")
 
 enum{
+	IDLE,
 	MOVE,
 	ATTACK,
 	DEATH,
 	ROLL
 }
 
+enum{
+	KAZMA,
+	BALTA,
+	KILIC,
+}
+
 func _physics_process(delta):
+	pass
+
+func _process(delta):
 	match state :
+		IDLE:
+			idle_state(delta)
 		MOVE :
 			move_state(delta)
 		ATTACK :
-			attack_state()
+			attack_state(delta)
+			return
 		ROLL :
 			pass
 #			roll_state(delta)
 		DEATH:
 			pass
+	tuslari_kontrol_et()
+	
+func idle_state(delta):
+	if !El:
+		animationTree.set("parameters/Duruş/blend_position", movement_vector)
+		animationState.travel("Duruş")
+	else :
+		animationTree.set("parameters/Duruşels/blend_position", movement_vector)
+		animationState.travel("Duruşels")
 
-func _process(delta):
-	pass
-#	var mousepositoion = get_local_mouse_position()
-#	var dir = Vector2.ZERO.direction_to(mousepositoion)
-#	var dist = mousepositoion.length()
-#	$Position2D/Hitbox/CollisionShape2D.position = dir * min(dist,max_dist)
-#	$Position2D/Hitbox/CollisionShape2D.rotation = mousepositoion.angle()
-#	#rotation+= mousepositoion.angle() * 0.1
+	velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
+
 
 func move_state(delta) :
-	
-	var input_vector = Vector2.ZERO
-	input_vector.x = Input.get_action_strength("SağaYürüme") - Input.get_action_strength("SolaYürüme")
-	input_vector.y = Input.get_action_strength("AşağıYürüme") - Input.get_action_strength("YukarıYürüme")
-	input_vector = input_vector.normalized()
-	
-	if input_vector != Vector2.ZERO :
-		roll_vector = input_vector
-		animationTree.set("parameters/Duruş/blend_position", input_vector)
-		animationTree.set("parameters/Yürüme/blend_position", input_vector)
-		animationTree.set("parameters/Duruşels/blend_position", input_vector)
-		animationTree.set("parameters/Yürümels/blend_position", input_vector)
-		animationTree.set("parameters/Saldırıels/blend_position", input_vector)
-#		animationTree.set("parameters/Yuvarlanma/blend_position", input_vector)
-#		yumruk_yonu()
-
-		if El == "Boş" :
-			animationState.travel("Yürüme")
-		else :
-			animationState.travel("Yürümels")
-
-		velocity = velocity.move_toward(input_vector * MAX_SPEED, ACCELERATION * delta)
-
+	animationTree.set("parameters/Yürüme/blend_position", movement_vector)
+	animationTree.set("parameters/Yürümels/blend_position", movement_vector)
+	if !El:
+		animationState.travel("Yürüme")
 	else :
-#		yumruk_yonu()
+		animationState.travel("Yürümels")
 
-		if El == "Boş" :
-			animationState.travel("Duruş")
-		else :
-			animationState.travel("Duruşels")
-
-		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
-
+	velocity = velocity.move_toward(movement_vector * MAX_SPEED, ACCELERATION * delta)
 	move()
-	
-	if El != "Boş" :
-		if Input.is_action_pressed("Saldırı"):
-			velocity = Vector2.ZERO
-			state = ATTACK
 
-func attack_state():
+func attack_state(delta):
+	animationTree.set("parameters/Saldırıels/blend_position", movement_vector)
 	animationState.travel("Saldırıels")
 
 func attack_Move():
-	state = MOVE
-#	if Input.is_action_just_pressed("Yuvarlanma"):
-#		state = ROLLd
-#func yumruk_yonu():
-#	var mousepositoion = get_local_mouse_position()
-#	var dir = Vector2.ZERO.direction_to(mousepositoion)
-#	animationTree.set("parameters/Yumruk/blend_position", dir)
+	state = IDLE 
 
 func move():
 	velocity = move_and_slide(velocity)
 
-#func roll_state(delta):
-#	velocity = roll_vector * ROLL_SPEED
-#	animationState.travel("Yuvarlanma")
-#	move()
+func degistirAlet(alet):
+	match alet:
+		KAZMA:
+			if El:
+				El_Esya.nesne_sil()
+			El_Esya = kazma.instance()
+			get_node(".").add_child(El_Esya)
+			El = true
+		BALTA:
+			if El:
+				El_Esya.nesne_sil()
+				
+			El_Esya = balta.instance()
+			get_node(".").add_child(El_Esya)
+			El = true
+		KILIC:
+			pass
 
-#func _YuvarlanmaB() :
-#	velocity = velocity * 0.3
-#	state = MOVE
+func tuslari_kontrol_et():
+	if Input.is_action_pressed("Saldırı") and El:
+		state = ATTACK
+		return
 
+	var movement : Vector2 = Vector2.ZERO
+	movement.x = Input.get_action_strength("SağaYürüme") - Input.get_action_strength("SolaYürüme")
+	movement.y = Input.get_action_strength("AşağıYürüme") - Input.get_action_strength("YukarıYürüme")
+	movement = movement.normalized()
+
+	if movement != Vector2.ZERO:
+		movement_vector = movement
+		run = true
+		state = MOVE
+	else:
+		run = false
+		state = IDLE
+
+	if Input.is_action_just_pressed("he_1"):
+		degistirAlet(KAZMA)
+	elif Input.is_action_just_pressed("he_2"):
+		degistirAlet(BALTA)
+
+func get_movement_vector() -> Vector2:
+	return movement_vector
+	
+func get_run_state() -> bool:
+	return run

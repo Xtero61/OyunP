@@ -1078,15 +1078,17 @@ texture = ExtResource( 6 )
 [node name="Cocuk" type="Sprite" parent="."]
 position = Vector2( 0, -10 )
 texture = ExtResource( 1 )
-hframes = 4
 vframes = 32
+hframes = 4
+frame = 1
 
 [node name="man axe_p_att" type="Sprite" parent="."]
 visible = false
 position = Vector2( 0, -13 )
 texture = ExtResource( 5 )
-hframes = 4
 vframes = 3
+hframes = 4
+frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.57079
