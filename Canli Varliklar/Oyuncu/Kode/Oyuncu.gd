@@ -1,34 +1,35 @@
 extends KinematicBody2D
 
-const ACCELERATION = 700
-const MAX_SPEED = 120
-const FRICTION = 500
-const ROLL_SPEED = 225
+const HIZLANMA = 700
+const MAKS_HIZ = 120
+const SURTUNME = 500
+const TAKLA_HIZ = 225
 
-var El: bool = false
-var El_Esya
-var movement_vector : Vector2 = Vector2.ZERO
-var run : bool = false
-var velocity: Vector2 = Vector2.ZERO
-var state : int = IDLE
-var max_dist : int = 12
+var elde_esya_var: bool = false # Elde esya var mi
+var el_esya # Eldeki esya nesnesi
+var hareket_vektoru : Vector2 = Vector2.ZERO # Hareket vektörü
+var kosuyor : bool = false # Karakter kosuyor mu
+var ivme: Vector2 = Vector2.ZERO # İvme vektörü
+var durum : int = DUR
+var maks_mesafe : int = 12 
 
 onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
 onready var collision = $Position2D/Hitbox/CollisionShape2D
-onready var balta = preload("res://Varliklar/Aletler/Balta/Balta.tscn")
-onready var kazma = preload("res://Varliklar/Aletler/Kazma/Kazma.tscn")
+onready var balta = load("res://Varliklar/Aletler/Balta/Balta.tscn")
+onready var kazma = load("res://Varliklar/Aletler/Kazma/Kazma.tscn")
 
 enum{
-	IDLE,
-	MOVE,
-	ATTACK,
-	DEATH,
-	ROLL
+	DUR,
+	DEVIN, # bkz. devinmek 
+	SALDIR,
+	OL,
+	TAKLA
 }
 
 enum{
+	BOS,
 	KAZMA,
 	BALTA,
 	KILIC,
@@ -38,96 +39,101 @@ func _physics_process(delta):
 	pass
 
 func _process(delta):
-	match state :
-		IDLE:
-			idle_state(delta)
-		MOVE :
-			move_state(delta)
-		ATTACK :
-			attack_state(delta)
+	match durum:
+		DUR:
+			dur_durumu(delta)
+		DEVIN :
+			devin_durumu(delta)
+		SALDIR :
+			saldir_durumu(delta)
 			return
-		ROLL :
+		TAKLA :
 			pass
-#			roll_state(delta)
-		DEATH:
+		OL:
 			pass
 	tuslari_kontrol_et()
 	
-func idle_state(delta):
-	if !El:
-		animationTree.set("parameters/Duruş/blend_position", movement_vector)
+func dur_durumu(delta):
+	if !elde_esya_var:
+		animationTree.set("parameters/Duruş/blend_position", hareket_vektoru)
 		animationState.travel("Duruş")
 	else :
-		animationTree.set("parameters/Duruşels/blend_position", movement_vector)
+		animationTree.set("parameters/Duruşels/blend_position", hareket_vektoru)
 		animationState.travel("Duruşels")
 
-	velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
+	ivme = ivme.move_toward(Vector2.ZERO, SURTUNME * delta)
 
 
-func move_state(delta) :
-	animationTree.set("parameters/Yürüme/blend_position", movement_vector)
-	animationTree.set("parameters/Yürümels/blend_position", movement_vector)
-	if !El:
+func devin_durumu(delta) :
+	animationTree.set("parameters/Yürüme/blend_position", hareket_vektoru)
+	animationTree.set("parameters/Yürümels/blend_position", hareket_vektoru)
+	if !elde_esya_var:
 		animationState.travel("Yürüme")
 	else :
 		animationState.travel("Yürümels")
 
-	velocity = velocity.move_toward(movement_vector * MAX_SPEED, ACCELERATION * delta)
+	ivme = ivme.move_toward(hareket_vektoru * MAKS_HIZ, HIZLANMA * delta)
 	move()
 
-func attack_state(delta):
-	animationTree.set("parameters/Saldırıels/blend_position", movement_vector)
+func saldir_durumu(delta) -> void:
+	animationTree.set("parameters/Saldırıels/blend_position", hareket_vektoru)
 	animationState.travel("Saldırıels")
 
-func attack_Move():
-	state = IDLE 
+func attack_Move(): # saldiri animasyonu gericagri(callback) fonk.
+	durum = DUR 
 
 func move():
-	velocity = move_and_slide(velocity)
+	ivme = move_and_slide(ivme)
 
-func degistirAlet(alet):
+func degistir_alet(alet):
 	match alet:
+		BOS:
+			if elde_esya_var:
+				el_esya.nesne_sil()
+			elde_esya_var = false
 		KAZMA:
-			if El:
-				El_Esya.nesne_sil()
-			El_Esya = kazma.instance()
-			get_node(".").add_child(El_Esya)
-			El = true
+			if elde_esya_var:
+				el_esya.nesne_sil()
+			el_esya = kazma.instance()
+			get_node(".").add_child(el_esya)
+			elde_esya_var = true
 		BALTA:
-			if El:
-				El_Esya.nesne_sil()
-				
-			El_Esya = balta.instance()
-			get_node(".").add_child(El_Esya)
-			El = true
+			if elde_esya_var:
+				el_esya.nesne_sil()
+			el_esya = balta.instance()
+			get_node(".").add_child(el_esya)
+			elde_esya_var = true
 		KILIC:
 			pass
 
-func tuslari_kontrol_et():
-	if Input.is_action_pressed("Saldırı") and El:
-		state = ATTACK
+func tuslari_kontrol_et() -> void:
+	if Input.is_action_pressed("Saldırı") and elde_esya_var:
+		durum = SALDIR
 		return
 
-	var movement : Vector2 = Vector2.ZERO
-	movement.x = Input.get_action_strength("SağaYürüme") - Input.get_action_strength("SolaYürüme")
-	movement.y = Input.get_action_strength("AşağıYürüme") - Input.get_action_strength("YukarıYürüme")
-	movement = movement.normalized()
+	var hareket : Vector2 = Vector2.ZERO
+	hareket.x = Input.get_action_strength("SağaYürüme") - Input.get_action_strength("SolaYürüme")
+	hareket.y = Input.get_action_strength("AşağıYürüme") - Input.get_action_strength("YukarıYürüme")
+	hareket = hareket.normalized()
 
-	if movement != Vector2.ZERO:
-		movement_vector = movement
-		run = true
-		state = MOVE
+	if hareket != Vector2.ZERO:
+		hareket_vektoru = hareket
+		kosuyor = true
+		durum = DEVIN
 	else:
-		run = false
-		state = IDLE
+		kosuyor = false
+		durum = DUR
 
-	if Input.is_action_just_pressed("he_1"):
-		degistirAlet(KAZMA)
+	if Input.is_action_just_pressed("he_0"):
+		degistir_alet(BOS)
+	elif Input.is_action_just_pressed("he_1"):
+		degistir_alet(KAZMA)
 	elif Input.is_action_just_pressed("he_2"):
-		degistirAlet(BALTA)
+		degistir_alet(BALTA)
 
-func get_movement_vector() -> Vector2:
-	return movement_vector
+
+func getir_hareket_vektoru() -> Vector2:
+	return hareket_vektoru
 	
-func get_run_state() -> bool:
-	return run
+func getir_kosuyor() -> bool:
+	return kosuyor

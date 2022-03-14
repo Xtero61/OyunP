@@ -4,7 +4,7 @@ var state = MOVE
 
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
-onready var player = get_parent()
+onready var oyuncu = get_parent()
 
 enum{
 	MOVE,
@@ -22,8 +22,8 @@ func _physics_process(delta) :
 			pass
 
 func move_state(delta) :
-	var input_vector = player.get_movement_vector()
-	var run = player.get_run_state()
+	var input_vector = oyuncu.getir_hareket_vektoru()
+	var run = oyuncu.getir_kosuyor()
 
 	if run :
 		animationTree.set("parameters/Saldırı/blend_position", input_vector)
