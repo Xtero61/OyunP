@@ -1,6 +1,6 @@
 [gd_scene load_steps=39 format=2]
 
-[ext_resource path="res://Varliklar/Aletler/Balta/Kode/Balta.gd" type="Script" id=1]
+[ext_resource path="res://Varliklar/Aletler/Eklemeler/alet.gd" type="Script" id=1]
 [ext_resource path="res://Varliklar/Aletler/Ortak Resim/axe_p_att.png" type="Texture" id=2]
 [ext_resource path="res://Varliklar/Aletler/Balta/Resim/axeİdRun.png" type="Texture" id=3]
 [ext_resource path="res://Varliklar/Aletler/Ortak Ses/swosh.wav" type="AudioStream" id=4]
@@ -808,7 +808,7 @@ position = Vector2( 0, -10 )
 texture = ExtResource( 3 )
 hframes = 4
 vframes = 16
-frame = 9
+frame = 12
 
 [node name="axe_p_att" type="Sprite" parent="."]
 visible = false

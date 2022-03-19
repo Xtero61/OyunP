@@ -16,7 +16,6 @@ var maks_mesafe : int = 12
 onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
-onready var collision = $Position2D/Hitbox/CollisionShape2D
 onready var balta = load("res://Varliklar/Aletler/Balta/Balta.tscn")
 onready var kazma = load("res://Varliklar/Aletler/Kazma/Kazma.tscn")
 
