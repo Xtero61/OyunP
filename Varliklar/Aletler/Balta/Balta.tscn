@@ -10,7 +10,7 @@ resource_name = "AxeattArka"
 length = 0.5
 step = 0.125
 tracks/0/type = "value"
-tracks/0/path = NodePath("axe_p_att:frame")
+tracks/0/path = NodePath("toolAttack:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -22,7 +22,7 @@ tracks/0/keys = {
 "values": [ 2, 2, 3, 3 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("axe_p_att:visible")
+tracks/1/path = NodePath("toolAttack:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -34,7 +34,7 @@ tracks/1/keys = {
 "values": [ true, true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("axeİdRun:visible")
+tracks/2/path = NodePath("toolIdRun:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -101,7 +101,7 @@ resource_name = "AxeattSağ"
 length = 0.5
 step = 0.125
 tracks/0/type = "value"
-tracks/0/path = NodePath("axe_p_att:frame")
+tracks/0/path = NodePath("toolAttack:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -113,7 +113,7 @@ tracks/0/keys = {
 "values": [ 6, 6, 7, 7 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("axe_p_att:visible")
+tracks/1/path = NodePath("toolAttack:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -125,7 +125,7 @@ tracks/1/keys = {
 "values": [ true, true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("axeİdRun:visible")
+tracks/2/path = NodePath("toolIdRun:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -192,7 +192,7 @@ resource_name = "AxeattSol"
 length = 0.5
 step = 0.125
 tracks/0/type = "value"
-tracks/0/path = NodePath("axe_p_att:frame")
+tracks/0/path = NodePath("toolAttack:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -204,7 +204,7 @@ tracks/0/keys = {
 "values": [ 4, 4, 5, 5 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("axe_p_att:visible")
+tracks/1/path = NodePath("toolAttack:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -216,7 +216,7 @@ tracks/1/keys = {
 "values": [ true, true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("axeİdRun:visible")
+tracks/2/path = NodePath("toolIdRun:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -283,7 +283,7 @@ resource_name = "AxeattÖn"
 length = 0.5
 step = 0.125
 tracks/0/type = "value"
-tracks/0/path = NodePath("axe_p_att:frame")
+tracks/0/path = NodePath("toolAttack:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -295,7 +295,7 @@ tracks/0/keys = {
 "values": [ 0, 0, 1, 1 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("axeİdRun:visible")
+tracks/1/path = NodePath("toolIdRun:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -307,7 +307,7 @@ tracks/1/keys = {
 "values": [ false, false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("axe_p_att:visible")
+tracks/2/path = NodePath("toolAttack:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -373,7 +373,7 @@ tracks/6/keys = {
 loop = true
 step = 0.125
 tracks/0/type = "value"
-tracks/0/path = NodePath("axeİdRun:frame")
+tracks/0/path = NodePath("toolIdRun:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -385,7 +385,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 7 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("axe_p_att:visible")
+tracks/1/path = NodePath("toolAttack:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -397,7 +397,7 @@ tracks/1/keys = {
 "values": [ false, false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("axeİdRun:visible")
+tracks/2/path = NodePath("toolIdRun:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -414,7 +414,7 @@ resource_name = "AxeidSağ"
 loop = true
 step = 0.125
 tracks/0/type = "value"
-tracks/0/path = NodePath("axeİdRun:frame")
+tracks/0/path = NodePath("toolIdRun:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -426,7 +426,7 @@ tracks/0/keys = {
 "values": [ 16, 17, 18, 19, 20, 21, 22, 23, 23 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("axe_p_att:visible")
+tracks/1/path = NodePath("toolAttack:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -438,7 +438,7 @@ tracks/1/keys = {
 "values": [ false, false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("axeİdRun:visible")
+tracks/2/path = NodePath("toolIdRun:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -455,7 +455,7 @@ resource_name = "AxeidSol"
 loop = true
 step = 0.125
 tracks/0/type = "value"
-tracks/0/path = NodePath("axeİdRun:frame")
+tracks/0/path = NodePath("toolIdRun:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -467,7 +467,7 @@ tracks/0/keys = {
 "values": [ 24, 25, 26, 27, 28, 29, 30, 31, 31 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("axeİdRun:visible")
+tracks/1/path = NodePath("toolIdRun:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -479,7 +479,7 @@ tracks/1/keys = {
 "values": [ true, true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("axe_p_att:visible")
+tracks/2/path = NodePath("toolAttack:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -496,7 +496,7 @@ resource_name = "AxeidÖn"
 loop = true
 step = 0.125
 tracks/0/type = "value"
-tracks/0/path = NodePath("axeİdRun:frame")
+tracks/0/path = NodePath("toolIdRun:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -508,7 +508,7 @@ tracks/0/keys = {
 "values": [ 8, 9, 10, 11, 12, 13, 14, 15, 15 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("axeİdRun:visible")
+tracks/1/path = NodePath("toolIdRun:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -520,7 +520,7 @@ tracks/1/keys = {
 "values": [ true, true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("axe_p_att:visible")
+tracks/2/path = NodePath("toolAttack:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -537,7 +537,7 @@ resource_name = "AxerunArka"
 loop = true
 step = 0.125
 tracks/0/type = "value"
-tracks/0/path = NodePath("axeİdRun:frame")
+tracks/0/path = NodePath("toolIdRun:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -549,7 +549,7 @@ tracks/0/keys = {
 "values": [ 33, 34, 35, 36, 37, 38, 39, 32, 32 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("axe_p_att:visible")
+tracks/1/path = NodePath("toolAttack:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -561,7 +561,7 @@ tracks/1/keys = {
 "values": [ false, false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("axeİdRun:visible")
+tracks/2/path = NodePath("toolIdRun:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -578,7 +578,7 @@ resource_name = "AxerunSağ"
 loop = true
 step = 0.125
 tracks/0/type = "value"
-tracks/0/path = NodePath("axeİdRun:frame")
+tracks/0/path = NodePath("toolIdRun:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -590,7 +590,7 @@ tracks/0/keys = {
 "values": [ 49, 50, 51, 52, 53, 54, 55, 48, 48 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("axeİdRun:visible")
+tracks/1/path = NodePath("toolIdRun:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -602,7 +602,7 @@ tracks/1/keys = {
 "values": [ true, true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("axe_p_att:visible")
+tracks/2/path = NodePath("toolAttack:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -619,7 +619,7 @@ resource_name = "AxerunSol"
 loop = true
 step = 0.125
 tracks/0/type = "value"
-tracks/0/path = NodePath("axeİdRun:frame")
+tracks/0/path = NodePath("toolIdRun:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -631,7 +631,7 @@ tracks/0/keys = {
 "values": [ 57, 58, 59, 60, 61, 62, 63, 56, 56 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("axe_p_att:visible")
+tracks/1/path = NodePath("toolAttack:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -643,7 +643,7 @@ tracks/1/keys = {
 "values": [ false, false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("axeİdRun:visible")
+tracks/2/path = NodePath("toolIdRun:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -660,7 +660,7 @@ resource_name = "AxerunÖn"
 loop = true
 step = 0.125
 tracks/0/type = "value"
-tracks/0/path = NodePath("axeİdRun:frame")
+tracks/0/path = NodePath("toolIdRun:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -672,7 +672,7 @@ tracks/0/keys = {
 "values": [ 41, 42, 43, 44, 45, 46, 47, 40, 40 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("axeİdRun:visible")
+tracks/1/path = NodePath("toolIdRun:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -684,7 +684,7 @@ tracks/1/keys = {
 "values": [ true, true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("axe_p_att:visible")
+tracks/2/path = NodePath("toolAttack:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -803,19 +803,21 @@ script = ExtResource( 1 )
 stream = ExtResource( 4 )
 volume_db = -15.0
 
-[node name="axeİdRun" type="Sprite" parent="."]
+[node name="toolIdRun" type="Sprite" parent="."]
+visible = false
 position = Vector2( 0, -10 )
 texture = ExtResource( 3 )
 hframes = 4
 vframes = 16
-frame = 12
+frame = 16
 
-[node name="axe_p_att" type="Sprite" parent="."]
+[node name="toolAttack" type="Sprite" parent="."]
 visible = false
 position = Vector2( 0, -13 )
 texture = ExtResource( 2 )
 hframes = 4
 vframes = 4
+frame = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/AxeattArka = SubResource( 1 )
@@ -834,14 +836,13 @@ anims/AxerunSol = SubResource( 11 )
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 32 )
 anim_player = NodePath("../AnimationPlayer")
-active = true
 parameters/playback = SubResource( 33 )
-"parameters/Duruş/blend_position" = Vector2( 0, 0.5 )
-"parameters/Saldırı/blend_position" = Vector2( 0, 0.5 )
+"parameters/Duruş/blend_position" = Vector2( 0, 0 )
+"parameters/Saldırı/blend_position" = Vector2( 0, 0 )
 "parameters/Yürüme/blend_position" = Vector2( 0, 0 )
 
 [node name="AxeHit" type="Area2D" parent="."]
-rotation = 1.5708
+rotation = 4.71239
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AxeHit"]
 position = Vector2( 10, 0 )

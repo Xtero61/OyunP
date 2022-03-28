@@ -107,7 +107,7 @@ func degistir_alet(alet):
 
 func tuslari_kontrol_et() -> void:
 	if Input.is_action_pressed("Saldırı") and elde_esya_var:
-		durum = SALDIR
+		saldirma_durumuna_gec()
 		return
 
 	var hareket : Vector2 = Vector2.ZERO
@@ -130,9 +130,15 @@ func tuslari_kontrol_et() -> void:
 	elif Input.is_action_just_pressed("he_2"):
 		degistir_alet(BALTA)
 
+func saldirma_durumuna_gec() -> void:
+	durum = SALDIR
+	el_esya.saldir()
 
 func getir_hareket_vektoru() -> Vector2:
 	return hareket_vektoru
 	
 func getir_kosuyor() -> bool:
 	return kosuyor
+
+func nesne_sil() -> void:
+	queue_free()

@@ -1,16 +1,25 @@
 extends Node2D
 
-var durum = DEVIN
+var durum: int = DEVIN
 
 onready var animasyonAgaci = $AnimationTree
 onready var animasyonDurumu = animasyonAgaci.get("parameters/playback")
 onready var oyuncu = get_parent()
+onready var input_vector = oyuncu.getir_hareket_vektoru()
+onready var run = oyuncu.getir_kosuyor()
 
 enum{
 	DEVIN,
 	SALDIR,
 	OL
 }
+
+func _ready():
+	var animasyon = $AnimationTree
+	input_vector = oyuncu.getir_hareket_vektoru()
+	run = oyuncu.getir_kosuyor()
+	animasyon_guncelle()
+	animasyon.active = true
 
 func _physics_process(delta) :
 	match durum :
@@ -22,20 +31,20 @@ func _physics_process(delta) :
 			pass
 
 func devin_durum(delta) :
-	var input_vector = oyuncu.getir_hareket_vektoru()
-	var run = oyuncu.getir_kosuyor()
+	input_vector = oyuncu.getir_hareket_vektoru()
+	run = oyuncu.getir_kosuyor()
 
+	animasyon_guncelle()
 	if run :
-		animasyonAgaci.set("parameters/Saldırı/blend_position", input_vector)
-		animasyonAgaci.set("parameters/Duruş/blend_position", input_vector)
-		animasyonAgaci.set("parameters/Yürüme/blend_position", input_vector)
 		animasyonDurumu.travel("Yürüme")
 
 	else :
 		animasyonDurumu.travel("Duruş")
 
-	if Input.is_action_pressed("Saldırı"):
-		durum = SALDIR
+func animasyon_guncelle() -> void:
+	animasyonAgaci.set("parameters/Saldırı/blend_position", input_vector)
+	animasyonAgaci.set("parameters/Duruş/blend_position", input_vector)
+	animasyonAgaci.set("parameters/Yürüme/blend_position", input_vector)	
 
 func saldir_durum():
 	animasyonDurumu.travel("Saldırı")
@@ -45,3 +54,6 @@ func attack_Move():
 
 func nesne_sil():
 	queue_free()
+
+func saldir():
+	durum = SALDIR
