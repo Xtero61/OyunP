@@ -1034,8 +1034,10 @@ scale = Vector2( 2, 2 )
 script = ExtResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2( 1.02151, 1 )
 current = true
 process_mode = 0
+smoothing_enabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 "anims/DuruşArka" = SubResource( 1 )
@@ -1078,16 +1080,16 @@ texture = ExtResource( 6 )
 [node name="Cocuk" type="Sprite" parent="."]
 position = Vector2( 0, -10 )
 texture = ExtResource( 1 )
-vframes = 32
 hframes = 4
-frame = 1
+vframes = 32
+frame = 4
 
 [node name="man axe_p_att" type="Sprite" parent="."]
 visible = false
 position = Vector2( 0, -13 )
 texture = ExtResource( 5 )
-vframes = 3
 hframes = 4
+vframes = 3
 frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

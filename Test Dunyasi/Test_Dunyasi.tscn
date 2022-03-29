@@ -1,12 +1,12 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Canli Varliklar/Oyuncu/Oyuncu.tscn" type="PackedScene" id=1]
+[ext_resource path="res://HizliErisim.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Varliklar/Kampatesi/KampAteşi.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Varliklar/Agac/Agac.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Varliklar/Tas/Tas.tscn" type="PackedScene" id=5]
 
 [node name="Node2D" type="YSort"]
-position = Vector2( 1, 0 )
 
 [node name="Oyuncu" parent="." instance=ExtResource( 1 )]
 
@@ -30,3 +30,6 @@ position = Vector2( 293.637, 328.867 )
 
 [node name="KampAteşi" parent="." instance=ExtResource( 3 )]
 position = Vector2( 126.056, 149.84 )
+
+[node name="HızlıErısım" parent="." instance=ExtResource( 2 )]
+follow_viewport_enable = false
