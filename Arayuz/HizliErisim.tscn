@@ -2,8 +2,8 @@
 
 [ext_resource path="res://Kullanilmamis Resim/hotbar.png" type="Texture" id=1]
 [ext_resource path="res://Esyalar/Kazma/kazmaSimge.png" type="Texture" id=2]
-[ext_resource path="res://Esyalar/Balta/baltaSimge.png" type="Texture" id=3]
-[ext_resource path="res://HizliErisim.gd" type="Script" id=4]
+[ext_resource path="res://Esyalar/Balta/resim/baltaSimge.png" type="Texture" id=3]
+[ext_resource path="res://Arayuz/HizliErisim.gd" type="Script" id=4]
 [ext_resource path="res://Kullanilmamis Resim/hotbarSec.png" type="Texture" id=5]
 
 [sub_resource type="Animation" id=1]
@@ -404,7 +404,6 @@ tracks/2/keys = {
 }
 
 [node name="HizliErisim" type="CanvasLayer"]
-follow_viewport_enable = true
 script = ExtResource( 4 )
 
 [node name="hotbar" type="Sprite" parent="."]
@@ -423,13 +422,12 @@ scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 
 [node name="hotbarSec" type="Sprite" parent="."]
-visible = false
-position = Vector2( 200, 504 )
-scale = Vector2( 2, 2 )
+position = Vector2( 256, 504 )
+scale = Vector2( 3, 3 )
 texture = ExtResource( 5 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "sec0"
+autoplay = "sec1"
 anims/sec0 = SubResource( 1 )
 anims/sec1 = SubResource( 2 )
 anims/sec2 = SubResource( 3 )

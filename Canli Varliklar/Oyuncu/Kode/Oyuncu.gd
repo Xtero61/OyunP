@@ -1,5 +1,9 @@
 extends KinematicBody2D
 
+class Esya:
+	var esya
+	var adet
+
 const HIZLANMA = 700
 const MAKS_HIZ = 120
 const SURTUNME = 500
@@ -12,10 +16,15 @@ var kosuyor : bool = false # Karakter kosuyor mu
 var ivme: Vector2 = Vector2.ZERO # İvme vektörü
 var durum : int = DUR
 var maks_mesafe : int = 12 
+var secili_slot : int = 1
+
+var hizli_erisim = Array()
 
 onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
+
+## Bunları burdan kaldır
 onready var balta = load("res://Varliklar/Aletler/Balta/Balta.tscn")
 onready var kazma = load("res://Varliklar/Aletler/Kazma/Kazma.tscn")
 
@@ -33,6 +42,11 @@ enum{
 	BALTA,
 	KILIC,
 }
+
+func _ready():
+	for i in range(1,10):
+		var a = Esya.new()
+		hizli_erisim.append(a)
 
 func _physics_process(delta):
 	pass
@@ -123,12 +137,31 @@ func tuslari_kontrol_et() -> void:
 		kosuyor = false
 		durum = DUR
 
+
 	if Input.is_action_just_pressed("he_0"):
 		degistir_alet(BOS)
+		secili_slot = 0
 	elif Input.is_action_just_pressed("he_1"):
 		degistir_alet(KAZMA)
+		secili_slot = 1
 	elif Input.is_action_just_pressed("he_2"):
 		degistir_alet(BALTA)
+		secili_slot = 2
+	elif Input.is_action_just_pressed("he_3"):
+		secili_slot = 3
+	elif Input.is_action_just_pressed("he_4"):
+		secili_slot = 4
+	elif Input.is_action_just_pressed("he_5"):
+		secili_slot = 5
+	elif Input.is_action_just_pressed("he_6"):
+		secili_slot = 6
+	elif Input.is_action_just_pressed("he_7"):
+		secili_slot = 7
+	elif Input.is_action_just_pressed("he_8"):
+		secili_slot = 8
+	elif Input.is_action_just_pressed("he_9"):
+		secili_slot = 9
+
 
 func saldirma_durumuna_gec() -> void:
 	durum = SALDIR
@@ -139,6 +172,9 @@ func getir_hareket_vektoru() -> Vector2:
 	
 func getir_kosuyor() -> bool:
 	return kosuyor
+
+func getir_secili_slot() -> int:
+	return secili_slot
 
 func nesne_sil() -> void:
 	queue_free()
