@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ağaç.png-3d641b471200a951edfede5c404a1251.stex"
+path="res://.import/paxeİdRun.png-5ac193c888c1f4e6ec1e20f63a00bed9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Varliklar/Agac/Resim/ağaç.png"
-dest_files=[ "res://.import/ağaç.png-3d641b471200a951edfede5c404a1251.stex" ]
+source_file="res://Varliklar/Aletler/Kazma/resim/paxeİdRun.png"
+dest_files=[ "res://.import/paxeİdRun.png-5ac193c888c1f4e6ec1e20f63a00bed9.stex" ]
 
 [params]
 

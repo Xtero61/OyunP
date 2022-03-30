@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/baltaSimge.png-d55fcfcc0635ca96bf466ea699b16bda.stex"
+path="res://.import/kamp_atesi.png-cb092b91d7359d676eb361ced76124a9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Esyalar/Balta/resim/baltaSimge.png"
-dest_files=[ "res://.import/baltaSimge.png-d55fcfcc0635ca96bf466ea699b16bda.stex" ]
+source_file="res://Varliklar/Kampatesi/resim/kamp_atesi.png"
+dest_files=[ "res://.import/kamp_atesi.png-cb092b91d7359d676eb361ced76124a9.stex" ]
 
 [params]
 

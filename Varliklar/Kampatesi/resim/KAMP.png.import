@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Pixmen.png-88408cafc66f95c7cb5a1ee966450e4b.stex"
+path="res://.import/KAMP.png-29ea83d0ceb9fa4f6d1cf82eb074c462.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Canli Varliklar/Oyuncu/Resim/Pixmen.png"
-dest_files=[ "res://.import/Pixmen.png-88408cafc66f95c7cb5a1ee966450e4b.stex" ]
+source_file="res://Varliklar/Kampatesi/resim/KAMP.png"
+dest_files=[ "res://.import/KAMP.png-29ea83d0ceb9fa4f6d1cf82eb074c462.stex" ]
 
 [params]
 

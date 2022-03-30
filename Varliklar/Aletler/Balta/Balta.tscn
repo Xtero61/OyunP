@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Varliklar/Aletler/Eklemeler/alet.gd" type="Script" id=1]
 [ext_resource path="res://Varliklar/Aletler/Ortak Resim/axe_p_att.png" type="Texture" id=2]
-[ext_resource path="res://Varliklar/Aletler/Balta/Resim/axeİdRun.png" type="Texture" id=3]
+[ext_resource path="res://Varliklar/Aletler/Balta/resim/axeİdRun.png" type="Texture" id=3]
 [ext_resource path="res://Varliklar/Aletler/Ortak Ses/swosh.wav" type="AudioStream" id=4]
 
 [sub_resource type="Animation" id=1]

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/baltaSimge.png-d55fcfcc0635ca96bf466ea699b16bda.stex"
+path="res://.import/dunya_texture4.png-537529a2b55ead0435763e5b0c0af8e0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Esyalar/Balta/resim/baltaSimge.png"
-dest_files=[ "res://.import/baltaSimge.png-d55fcfcc0635ca96bf466ea699b16bda.stex" ]
+source_file="res://Kullanilmamis Resim/dunya_texture4.png"
+dest_files=[ "res://.import/dunya_texture4.png-537529a2b55ead0435763e5b0c0af8e0.stex" ]
 
 [params]
 

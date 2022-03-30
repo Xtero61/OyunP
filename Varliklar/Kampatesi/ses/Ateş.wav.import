@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/Ateş.wav-e5c65c5f72d819657b4590efb34ac24a.sample"
+path="res://.import/Ateş.wav-91996b4150adfb3a902cdf1d76b913ab.sample"
 
 [deps]
 
-source_file="res://Varliklar/Kampatesi/Ateş.wav"
-dest_files=[ "res://.import/Ateş.wav-e5c65c5f72d819657b4590efb34ac24a.sample" ]
+source_file="res://Varliklar/Kampatesi/ses/Ateş.wav"
+dest_files=[ "res://.import/Ateş.wav-91996b4150adfb3a902cdf1d76b913ab.sample" ]
 
 [params]
 

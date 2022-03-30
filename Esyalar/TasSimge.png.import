@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/KAMP.png-5b55bf9141ee72c747c1a67cf6494522.stex"
+path="res://.import/TasSimge.png-f4f5dad836a1583c50c2382a335c0001.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Varliklar/Kampatesi/KAMP.png"
-dest_files=[ "res://.import/KAMP.png-5b55bf9141ee72c747c1a67cf6494522.stex" ]
+source_file="res://Esyalar/TasSimge.png"
+dest_files=[ "res://.import/TasSimge.png-f4f5dad836a1583c50c2382a335c0001.stex" ]
 
 [params]
 

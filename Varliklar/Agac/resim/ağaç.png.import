@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/baltaSimge.png-d55fcfcc0635ca96bf466ea699b16bda.stex"
+path="res://.import/ağaç.png-5daf4398a27d2700fb9efe579279c7fa.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Esyalar/Balta/resim/baltaSimge.png"
-dest_files=[ "res://.import/baltaSimge.png-d55fcfcc0635ca96bf466ea699b16bda.stex" ]
+source_file="res://Varliklar/Agac/resim/ağaç.png"
+dest_files=[ "res://.import/ağaç.png-5daf4398a27d2700fb9efe579279c7fa.stex" ]
 
 [params]
 

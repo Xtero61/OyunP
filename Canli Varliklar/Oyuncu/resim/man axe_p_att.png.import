@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/baltaSimge.png-d55fcfcc0635ca96bf466ea699b16bda.stex"
+path="res://.import/man axe_p_att.png-0dd2a1b0828529db06cc01f3daf15aab.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Esyalar/Balta/resim/baltaSimge.png"
-dest_files=[ "res://.import/baltaSimge.png-d55fcfcc0635ca96bf466ea699b16bda.stex" ]
+source_file="res://Canli Varliklar/Oyuncu/resim/man axe_p_att.png"
+dest_files=[ "res://.import/man axe_p_att.png-0dd2a1b0828529db06cc01f3daf15aab.stex" ]
 
 [params]
 

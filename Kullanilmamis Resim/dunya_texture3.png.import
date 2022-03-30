@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Taş.png-cd080aec016103981dd1d96ff1418f93.stex"
+path="res://.import/dunya_texture3.png-2e92a504b92fd9e6d8995c50b205d3c6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Varliklar/Tas/Resim/Taş.png"
-dest_files=[ "res://.import/Taş.png-cd080aec016103981dd1d96ff1418f93.stex" ]
+source_file="res://Kullanilmamis Resim/dunya_texture3.png"
+dest_files=[ "res://.import/dunya_texture3.png-2e92a504b92fd9e6d8995c50b205d3c6.stex" ]
 
 [params]
 

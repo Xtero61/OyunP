@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/AgacVurulma.wav-bf6ffbaf420c09a065c71b366c912cbb.sample"
+
+[deps]
+
+source_file="res://Varliklar/Agac/ses/AgacVurulma.wav"
+dest_files=[ "res://.import/AgacVurulma.wav-bf6ffbaf420c09a065c71b366c912cbb.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

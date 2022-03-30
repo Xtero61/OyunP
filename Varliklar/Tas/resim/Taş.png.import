@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/paxeİdRun.png-a59344807edb1422c0b94e7f65530020.stex"
+path="res://.import/Taş.png-e611b84abd48871608ca622484c52e4f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Varliklar/Aletler/Kazma/Resim/paxeİdRun.png"
-dest_files=[ "res://.import/paxeİdRun.png-a59344807edb1422c0b94e7f65530020.stex" ]
+source_file="res://Varliklar/Tas/resim/Taş.png"
+dest_files=[ "res://.import/Taş.png-e611b84abd48871608ca622484c52e4f.stex" ]
 
 [params]
 
