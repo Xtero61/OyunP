@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
-class Esya:
-	var esya
-	var adet
+onready var anadugum = get_node("/root/Dunya/AnaDugum")
+onready var kazma = anadugum.getir_varlik_sahne("kazma")
+onready var balta = anadugum.getir_varlik_sahne("balta")
 
 const HIZLANMA = 700
 const MAKS_HIZ = 120
@@ -16,17 +16,13 @@ var kosuyor : bool = false # Karakter kosuyor mu
 var ivme: Vector2 = Vector2.ZERO # İvme vektörü
 var durum : int = DUR
 var maks_mesafe : int = 12 
-var secili_slot : int = 1
-
-var hizli_erisim = Array()
+var secili_yuva : int = 1
+var eski_yuva : int = 0
 
 onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
-
-## Bunları burdan kaldır
-onready var balta = load("res://Varliklar/Aletler/Balta/Balta.tscn")
-onready var kazma = load("res://Varliklar/Aletler/Kazma/Kazma.tscn")
+onready var hizli_erisim = $HizliErisim
 
 enum{
 	DUR,
@@ -44,9 +40,17 @@ enum{
 }
 
 func _ready():
-	for i in range(1,10):
-		var a = Esya.new()
-		hizli_erisim.append(a)
+	hizli_erisim.esya_ekle(1, 
+		anadugum.getir_esya_sahne("kazma_esya").instance(),
+		anadugum.getir_varlik_sahne("kazma").instance())
+	hizli_erisim.esya_ekle(2,
+		anadugum.getir_esya_sahne("balta_esya").instance(),
+		anadugum.getir_varlik_sahne("balta").instance())
+
+	hizli_erisim.esya_ekle(3,
+		anadugum.getir_esya_sahne("odun_esya").instance(),
+		anadugum.getir_esya_sahne("odun_esya").instance())
+		
 
 func _physics_process(delta):
 	pass
@@ -98,26 +102,15 @@ func attack_Move(): # saldiri animasyonu gericagri(callback) fonk.
 func move():
 	ivme = move_and_slide(ivme)
 
-func degistir_alet(alet):
-	match alet:
-		BOS:
-			if elde_esya_var:
-				el_esya.nesne_sil()
-			elde_esya_var = false
-		KAZMA:
-			if elde_esya_var:
-				el_esya.nesne_sil()
-			el_esya = kazma.instance()
-			get_node(".").add_child(el_esya)
-			elde_esya_var = true
-		BALTA:
-			if elde_esya_var:
-				el_esya.nesne_sil()
-			el_esya = balta.instance()
-			get_node(".").add_child(el_esya)
-			elde_esya_var = true
-		KILIC:
-			pass
+func el_esya_degistir(yuva):
+	remove_child(el_esya)
+	el_esya = hizli_erisim.getir_el_esya(yuva)
+	if el_esya != null:
+		add_child(el_esya)
+		elde_esya_var = true
+	else:
+		elde_esya_var = false
+	
 
 func tuslari_kontrol_et() -> void:
 	if Input.is_action_pressed("Saldırı") and elde_esya_var:
@@ -139,29 +132,29 @@ func tuslari_kontrol_et() -> void:
 
 
 	if Input.is_action_just_pressed("he_0"):
-		degistir_alet(BOS)
-		secili_slot = 0
+		secili_yuva = 0
 	elif Input.is_action_just_pressed("he_1"):
-		degistir_alet(KAZMA)
-		secili_slot = 1
+		secili_yuva = 1
 	elif Input.is_action_just_pressed("he_2"):
-		degistir_alet(BALTA)
-		secili_slot = 2
+		secili_yuva = 2
 	elif Input.is_action_just_pressed("he_3"):
-		secili_slot = 3
+		secili_yuva = 3
 	elif Input.is_action_just_pressed("he_4"):
-		secili_slot = 4
+		secili_yuva = 4
 	elif Input.is_action_just_pressed("he_5"):
-		secili_slot = 5
+		secili_yuva = 5
 	elif Input.is_action_just_pressed("he_6"):
-		secili_slot = 6
+		secili_yuva = 6
 	elif Input.is_action_just_pressed("he_7"):
-		secili_slot = 7
+		secili_yuva = 7
 	elif Input.is_action_just_pressed("he_8"):
-		secili_slot = 8
+		secili_yuva = 8
 	elif Input.is_action_just_pressed("he_9"):
-		secili_slot = 9
+		secili_yuva = 9
 
+	if secili_yuva != eski_yuva:
+		el_esya_degistir(secili_yuva)
+	eski_yuva = secili_yuva
 
 func saldirma_durumuna_gec() -> void:
 	durum = SALDIR
@@ -173,8 +166,8 @@ func getir_hareket_vektoru() -> Vector2:
 func getir_kosuyor() -> bool:
 	return kosuyor
 
-func getir_secili_slot() -> int:
-	return secili_slot
+func getir_secili_yuva() -> int:
+	return secili_yuva
 
 func nesne_sil() -> void:
 	queue_free()

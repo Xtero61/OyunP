@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/kazmaSimge.png-426514f683c2fa8082bba49bce5671ec.stex"
+path="res://.import/odunSimge.png-bc9d4fa8f98152e8798c5954a178a458.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Esyalar/Kazma/kazmaSimge.png"
-dest_files=[ "res://.import/kazmaSimge.png-426514f683c2fa8082bba49bce5671ec.stex" ]
+source_file="res://Esyalar/Odun/resim/odunSimge.png"
+dest_files=[ "res://.import/odunSimge.png-bc9d4fa8f98152e8798c5954a178a458.stex" ]
 
 [params]
 
