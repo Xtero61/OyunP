@@ -29,9 +29,11 @@ var yuva: int = 1
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	for i in range(1,10):
+		var yuva_ismi = "yuva" + str(i)
 		var gecici_degisken = Yuva.new()
-		gecici_degisken.esya = get_node("yuva" + str(i))
+		gecici_degisken.esya = get_node(yuva_ismi)
 		gecici_degisken.adet = 0
+		gecici_degisken.esya.sayiyi_ayarla(0)
 		hizli_erisim.append(gecici_degisken)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -43,7 +45,8 @@ func _process(delta):
 		eski_yuva = yuva
 		$AnimationPlayer.play(animasyonlar[yuva])
 
-func esya_ekle(yuva, esya, varlik):
+func esya_ekle(yuva: int, esya, varlik, adet: int) -> void:
+	hizli_erisim[yuva - 1].esya.sayiyi_ayarla(adet)	
 	hizli_erisim[yuva - 1].esya.add_child(esya)
 	if varlik != null:
 		hizli_erisim[yuva - 1].gercek_esya = varlik
@@ -52,3 +55,6 @@ func esya_ekle(yuva, esya, varlik):
 	
 func getir_el_esya(yuva):
 	return hizli_erisim[yuva - 1].gercek_esya
+
+func yuva_sayac_ayarla(yuva: int, sayi: int) -> void:
+	hizli_erisim[yuva - 1].esya.sayiyi_ayarla(sayi)

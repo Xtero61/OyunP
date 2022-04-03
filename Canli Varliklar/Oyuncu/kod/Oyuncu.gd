@@ -1,8 +1,6 @@
 extends KinematicBody2D
 
 onready var anadugum = get_node("/root/Dunya/AnaDugum")
-onready var kazma = anadugum.getir_varlik_sahne("kazma")
-onready var balta = anadugum.getir_varlik_sahne("balta")
 
 const HIZLANMA = 700
 const MAKS_HIZ = 120
@@ -42,15 +40,20 @@ enum{
 func _ready():
 	hizli_erisim.esya_ekle(1, 
 		anadugum.getir_esya_sahne("kazma_esya").instance(),
-		anadugum.getir_varlik_sahne("kazma").instance())
+		anadugum.getir_varlik_sahne("kazma").instance(),
+		1)
 	hizli_erisim.esya_ekle(2,
 		anadugum.getir_esya_sahne("balta_esya").instance(),
-		anadugum.getir_varlik_sahne("balta").instance())
-
+		anadugum.getir_varlik_sahne("balta").instance(),
+		1)
 	hizli_erisim.esya_ekle(3,
 		anadugum.getir_esya_sahne("odun_esya").instance(),
-		anadugum.getir_esya_sahne("odun_esya").instance())
-		
+		anadugum.getir_esya_sahne("odun_esya").instance(),
+		50)
+	hizli_erisim.esya_ekle(4,
+		anadugum.getir_esya_sahne("tas_esya").instance(),
+		anadugum.getir_esya_sahne("tas_esya").instance(),
+		12)
 
 func _physics_process(delta):
 	pass
@@ -129,7 +132,6 @@ func tuslari_kontrol_et() -> void:
 	else:
 		kosuyor = false
 		durum = DUR
-
 
 	if Input.is_action_just_pressed("he_0"):
 		secili_yuva = 0

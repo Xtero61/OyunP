@@ -1,5 +1,7 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
+[ext_resource path="res://Fontlar/hizli_erisim_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Arayuz/Hizli Erisim/kod/yuva.gd" type="Script" id=2]
 [ext_resource path="res://Arayuz/Hizli Erisim/kod/HizliErisim.gd" type="Script" id=3]
 [ext_resource path="res://Arayuz/Hizli Erisim/resim/hotbar.png" type="Texture" id=4]
 [ext_resource path="res://Kullanilmamis Resim/hotbarSec.png" type="Texture" id=5]
@@ -431,35 +433,116 @@ anims/sec9 = SubResource( 10 )
 [node name="yuva1" type="Position2D" parent="."]
 position = Vector2( 256, 504 )
 scale = Vector2( 2, 2 )
+script = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="yuva1"]
+margin_left = -12.0
+margin_top = -12.0
+margin_bottom = -2.0
+custom_fonts/font = ExtResource( 1 )
+text = "100"
+align = 1
 
 [node name="yuva2" type="Position2D" parent="."]
 position = Vector2( 312, 504 )
 scale = Vector2( 2, 2 )
+script = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="yuva2"]
+margin_left = -12.0
+margin_top = -12.0
+margin_bottom = -2.0
+custom_fonts/font = ExtResource( 1 )
+text = "100"
+align = 1
 
 [node name="yuva3" type="Position2D" parent="."]
 position = Vector2( 368, 504 )
 scale = Vector2( 2, 2 )
+script = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="yuva3"]
+margin_left = -12.0
+margin_top = -12.0
+margin_bottom = -2.0
+custom_fonts/font = ExtResource( 1 )
+text = "100"
+align = 1
 
 [node name="yuva4" type="Position2D" parent="."]
 position = Vector2( 424, 504 )
 scale = Vector2( 2, 2 )
+script = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="yuva4"]
+margin_left = -12.0
+margin_top = -12.0
+margin_bottom = -2.0
+custom_fonts/font = ExtResource( 1 )
+text = "100"
+align = 1
 
 [node name="yuva5" type="Position2D" parent="."]
 position = Vector2( 480, 504 )
 scale = Vector2( 2, 2 )
+script = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="yuva5"]
+margin_left = -12.0
+margin_top = -12.0
+margin_bottom = -2.0
+custom_fonts/font = ExtResource( 1 )
+text = "100"
+align = 1
 
 [node name="yuva6" type="Position2D" parent="."]
 position = Vector2( 536, 504 )
 scale = Vector2( 2, 2 )
+script = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="yuva6"]
+margin_left = -12.0
+margin_top = -12.0
+margin_bottom = -2.0
+custom_fonts/font = ExtResource( 1 )
+text = "100"
+align = 1
 
 [node name="yuva7" type="Position2D" parent="."]
 position = Vector2( 592, 504 )
 scale = Vector2( 2, 2 )
+script = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="yuva7"]
+margin_left = -12.0
+margin_top = -12.0
+margin_bottom = -2.0
+custom_fonts/font = ExtResource( 1 )
+text = "100"
+align = 1
 
 [node name="yuva8" type="Position2D" parent="."]
 position = Vector2( 648, 504 )
 scale = Vector2( 2, 2 )
+script = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="yuva8"]
+margin_left = -12.0
+margin_top = -12.0
+margin_bottom = -2.0
+custom_fonts/font = ExtResource( 1 )
+text = "100"
+align = 1
 
 [node name="yuva9" type="Position2D" parent="."]
 position = Vector2( 704, 504 )
 scale = Vector2( 2, 2 )
+script = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="yuva9"]
+margin_left = -12.0
+margin_top = -12.0
+margin_bottom = -2.0
+custom_fonts/font = ExtResource( 1 )
+text = "100"
+align = 1
