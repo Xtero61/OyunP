@@ -42,11 +42,11 @@ func _ready():
 	var hizli_erisim_boyut = $"./hotbar".get_rect().size
 	var ekran_boyut = get_viewport().get_visible_rect().size
 	
-	$".".offset.x += (ekran_boyut.x / 2 - hizli_erisim_boyut.x)
-	$".".offset.y += (ekran_boyut.y - hizli_erisim_boyut.y * 2)
+	$".".offset.x += (ekran_boyut.x / 2 - (hizli_erisim_boyut.x * Genel.DUNYA_OLCEGI.x) / 2 )
+	$".".offset.y += (ekran_boyut.y - hizli_erisim_boyut.y * Genel.DUNYA_OLCEGI.y)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	eski_yuva = yuva
 	yuva = oyuncu.getir_secili_yuva()
 	
@@ -54,16 +54,16 @@ func _process(delta):
 		eski_yuva = yuva
 		$AnimationPlayer.play(animasyonlar[yuva])
 
-func esya_ekle(yuva: int, esya, varlik, adet: int) -> void:
-	hizli_erisim[yuva - 1].esya.sayiyi_ayarla(adet)	
-	hizli_erisim[yuva - 1].esya.add_child(esya)
+func esya_ekle(_yuva: int, esya, varlik, adet: int) -> void:
+	hizli_erisim[_yuva - 1].esya.sayiyi_ayarla(adet)	
+	hizli_erisim[_yuva - 1].esya.add_child(esya)
 	if varlik != null:
-		hizli_erisim[yuva - 1].gercek_esya = varlik
+		hizli_erisim[_yuva - 1].gercek_esya = varlik
 	else:
-		hizli_erisim[yuva - 1].gercek_esya = esya
+		hizli_erisim[_yuva - 1].gercek_esya = esya
 	
-func getir_el_esya(yuva):
-	return hizli_erisim[yuva - 1].gercek_esya
+func getir_el_esya(_yuva):
+	return hizli_erisim[_yuva - 1].gercek_esya
 
-func yuva_sayac_ayarla(yuva: int, sayi: int) -> void:
-	hizli_erisim[yuva - 1].esya.sayiyi_ayarla(sayi)
+func yuva_sayac_ayarla(_yuva: int, sayi: int) -> void:
+	hizli_erisim[_yuva - 1].esya.sayiyi_ayarla(sayi)
