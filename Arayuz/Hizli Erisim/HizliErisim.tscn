@@ -407,13 +407,13 @@ tracks/2/keys = {
 script = ExtResource( 3 )
 
 [node name="hotbar" type="Sprite" parent="."]
-position = Vector2( 480, 504 )
+position = Vector2( 253, 29 )
 scale = Vector2( 2, 2 )
+z_index = -1
 texture = ExtResource( 4 )
 
 [node name="hotbarSec" type="Sprite" parent="."]
-visible = false
-position = Vector2( 200, 504 )
+position = Vector2( 256, 504 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 5 )
 
@@ -431,11 +431,13 @@ anims/sec8 = SubResource( 9 )
 anims/sec9 = SubResource( 10 )
 
 [node name="yuva1" type="Position2D" parent="."]
-position = Vector2( 256, 504 )
+position = Vector2( 29, 29 )
 scale = Vector2( 2, 2 )
 script = ExtResource( 2 )
 
-[node name="Label" type="Label" parent="yuva1"]
+[node name="label_kok" type="Node2D" parent="yuva1"]
+
+[node name="Label" type="Label" parent="yuva1/label_kok"]
 margin_left = -12.0
 margin_top = -12.0
 margin_bottom = -2.0
@@ -444,11 +446,13 @@ text = "100"
 align = 1
 
 [node name="yuva2" type="Position2D" parent="."]
-position = Vector2( 312, 504 )
+position = Vector2( 85, 29 )
 scale = Vector2( 2, 2 )
 script = ExtResource( 2 )
 
-[node name="Label" type="Label" parent="yuva2"]
+[node name="label_kok" type="Node2D" parent="yuva2"]
+
+[node name="Label" type="Label" parent="yuva2/label_kok"]
 margin_left = -12.0
 margin_top = -12.0
 margin_bottom = -2.0
@@ -457,11 +461,13 @@ text = "100"
 align = 1
 
 [node name="yuva3" type="Position2D" parent="."]
-position = Vector2( 368, 504 )
+position = Vector2( 141, 29 )
 scale = Vector2( 2, 2 )
 script = ExtResource( 2 )
 
-[node name="Label" type="Label" parent="yuva3"]
+[node name="label_kok" type="Node2D" parent="yuva3"]
+
+[node name="Label" type="Label" parent="yuva3/label_kok"]
 margin_left = -12.0
 margin_top = -12.0
 margin_bottom = -2.0
@@ -470,11 +476,13 @@ text = "100"
 align = 1
 
 [node name="yuva4" type="Position2D" parent="."]
-position = Vector2( 424, 504 )
+position = Vector2( 197, 29 )
 scale = Vector2( 2, 2 )
 script = ExtResource( 2 )
 
-[node name="Label" type="Label" parent="yuva4"]
+[node name="label_kok" type="Node2D" parent="yuva4"]
+
+[node name="Label" type="Label" parent="yuva4/label_kok"]
 margin_left = -12.0
 margin_top = -12.0
 margin_bottom = -2.0
@@ -483,11 +491,13 @@ text = "100"
 align = 1
 
 [node name="yuva5" type="Position2D" parent="."]
-position = Vector2( 480, 504 )
+position = Vector2( 253, 29 )
 scale = Vector2( 2, 2 )
 script = ExtResource( 2 )
 
-[node name="Label" type="Label" parent="yuva5"]
+[node name="label_kok" type="Node2D" parent="yuva5"]
+
+[node name="Label" type="Label" parent="yuva5/label_kok"]
 margin_left = -12.0
 margin_top = -12.0
 margin_bottom = -2.0
@@ -496,11 +506,13 @@ text = "100"
 align = 1
 
 [node name="yuva6" type="Position2D" parent="."]
-position = Vector2( 536, 504 )
+position = Vector2( 309, 29 )
 scale = Vector2( 2, 2 )
 script = ExtResource( 2 )
 
-[node name="Label" type="Label" parent="yuva6"]
+[node name="label_kok" type="Node2D" parent="yuva6"]
+
+[node name="Label" type="Label" parent="yuva6/label_kok"]
 margin_left = -12.0
 margin_top = -12.0
 margin_bottom = -2.0
@@ -509,11 +521,13 @@ text = "100"
 align = 1
 
 [node name="yuva7" type="Position2D" parent="."]
-position = Vector2( 592, 504 )
+position = Vector2( 365, 29 )
 scale = Vector2( 2, 2 )
 script = ExtResource( 2 )
 
-[node name="Label" type="Label" parent="yuva7"]
+[node name="label_kok" type="Node2D" parent="yuva7"]
+
+[node name="Label" type="Label" parent="yuva7/label_kok"]
 margin_left = -12.0
 margin_top = -12.0
 margin_bottom = -2.0
@@ -522,11 +536,13 @@ text = "100"
 align = 1
 
 [node name="yuva8" type="Position2D" parent="."]
-position = Vector2( 648, 504 )
+position = Vector2( 421, 29 )
 scale = Vector2( 2, 2 )
 script = ExtResource( 2 )
 
-[node name="Label" type="Label" parent="yuva8"]
+[node name="label_kok" type="Node2D" parent="yuva8"]
+
+[node name="Label" type="Label" parent="yuva8/label_kok"]
 margin_left = -12.0
 margin_top = -12.0
 margin_bottom = -2.0
@@ -535,11 +551,13 @@ text = "100"
 align = 1
 
 [node name="yuva9" type="Position2D" parent="."]
-position = Vector2( 704, 504 )
+position = Vector2( 477, 29 )
 scale = Vector2( 2, 2 )
 script = ExtResource( 2 )
 
-[node name="Label" type="Label" parent="yuva9"]
+[node name="label_kok" type="Node2D" parent="yuva9"]
+
+[node name="Label" type="Label" parent="yuva9/label_kok"]
 margin_left = -12.0
 margin_top = -12.0
 margin_bottom = -2.0

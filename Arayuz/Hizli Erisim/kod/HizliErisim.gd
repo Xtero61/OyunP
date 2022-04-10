@@ -24,6 +24,7 @@ var animasyonlar = [
 ]
 
 onready var oyuncu = get_parent()
+
 var eski_yuva: int = 1
 var yuva: int = 1
 # Called when the node enters the scene tree for the first time.
@@ -35,6 +36,14 @@ func _ready():
 		gecici_degisken.adet = 0
 		gecici_degisken.esya.sayiyi_ayarla(0)
 		hizli_erisim.append(gecici_degisken)
+
+
+	# hizli erişim çubuğunu ekranın altına ayarla
+	var hizli_erisim_boyut = $"./hotbar".get_rect().size
+	var ekran_boyut = get_viewport().get_visible_rect().size
+	
+	$".".offset.x += (ekran_boyut.x / 2 - hizli_erisim_boyut.x)
+	$".".offset.y += (ekran_boyut.y - hizli_erisim_boyut.y * 2)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
