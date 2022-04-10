@@ -4,7 +4,7 @@ var durum: int = DEVIN
 
 onready var animasyonAgaci = $AnimationTree
 onready var animasyonDurumu = animasyonAgaci.get("parameters/playback")
-onready var oyuncu = get_parent()
+onready var oyuncu = get_node("/root/Dunya/AnaDugum/Oyuncu")
 onready var input_vector = oyuncu.getir_hareket_vektoru()
 onready var run = oyuncu.getir_kosuyor()
 

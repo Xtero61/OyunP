@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TasSimge.png-f4f5dad836a1583c50c2382a335c0001.stex"
+path="res://.import/kazmaSimge.png-3ba3233006b2205a7d4e83826c159e61.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Esyalar/TasSimge.png"
-dest_files=[ "res://.import/TasSimge.png-f4f5dad836a1583c50c2382a335c0001.stex" ]
+source_file="res://Esyalar/Kazma/resim/kazmaSimge.png"
+dest_files=[ "res://.import/kazmaSimge.png-3ba3233006b2205a7d4e83826c159e61.stex" ]
 
 [params]
 
@@ -28,6 +28,7 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=true

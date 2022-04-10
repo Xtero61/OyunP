@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/odunSimge.png-80801dfbde5817a881640146fe534124.stex"
+path="res://.import/TasSimge.png-aa5c6a1d1d9deb8061026d921fda65d7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Esyalar/odunSimge.png"
-dest_files=[ "res://.import/odunSimge.png-80801dfbde5817a881640146fe534124.stex" ]
+source_file="res://Esyalar/Tas/resim/TasSimge.png"
+dest_files=[ "res://.import/TasSimge.png-aa5c6a1d1d9deb8061026d921fda65d7.stex" ]
 
 [params]
 
@@ -28,6 +28,7 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=true
