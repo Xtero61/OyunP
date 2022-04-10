@@ -355,7 +355,6 @@ extents = Vector2( 4, 9.76386 )
 extents = Vector2( 10.8489, 4 )
 
 [node name="Agac" type="Node2D"]
-scale = Vector2( 2, 2 )
 script = ExtResource( 2 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

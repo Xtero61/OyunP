@@ -1,7 +1,5 @@
 extends KinematicBody2D
 
-onready var anadugum = get_node("/root/Dunya/AnaDugum")
-
 const HIZLANMA = 700
 const MAKS_HIZ = 120
 const SURTUNME = 500
@@ -39,23 +37,23 @@ enum{
 
 func _ready():
 	hizli_erisim.esya_ekle(1, 
-		anadugum.getir_esya_sahne("kazma_esya").instance(),
-		anadugum.getir_varlik_sahne("kazma").instance(),
+		Genel.esya["kazma_esya"].instance(),
+		Genel.varlik["kazma"].instance(),
 		1)
 	hizli_erisim.esya_ekle(2,
-		anadugum.getir_esya_sahne("balta_esya").instance(),
-		anadugum.getir_varlik_sahne("balta").instance(),
+		Genel.esya["balta_esya"].instance(),
+		Genel.varlik["balta"].instance(),
 		1)
 	hizli_erisim.esya_ekle(3,
-		anadugum.getir_esya_sahne("odun_esya").instance(),
-		anadugum.getir_esya_sahne("odun_esya").instance(),
-		50)
+		Genel.esya["odun_esya"].instance(),
+		Genel.esya["odun_esya"].instance(),
+		100)
 	hizli_erisim.esya_ekle(4,
-		anadugum.getir_esya_sahne("tas_esya").instance(),
-		anadugum.getir_esya_sahne("tas_esya").instance(),
+		Genel.esya["tas_esya"].instance(),
+		Genel.esya["tas_esya"].instance(),
 		12)
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	pass
 
 func _process(delta):
@@ -95,7 +93,7 @@ func devin_durumu(delta) :
 	ivme = ivme.move_toward(hareket_vektoru * MAKS_HIZ, HIZLANMA * delta)
 	move()
 
-func saldir_durumu(delta) -> void:
+func saldir_durumu(_delta) -> void:
 	animationTree.set("parameters/Saldırıels/blend_position", hareket_vektoru)
 	animationState.travel("Saldırıels")
 

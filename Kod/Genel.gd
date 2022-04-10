@@ -1,6 +1,13 @@
-extends YSort
+extends Node
+# Declare member variables here. Examples:
+# var a = 2
+# var b = "text"
 
 const MAKS_ESYA_MIKTARI : int = 100
+const ESYA_DUSME_RASTGELE_KUVVET : int = 500
+const OYUNCU_YERI: String = "/root/Dunya/YSort/Oyuncu"
+const DUNYA_OLCEGI: Vector2 = Vector2(2, 2)
+const AGAC_MAKS_ESYA_DUSURME :int = 4
 
 # Esya yuklemeleri
 var esya = {
@@ -17,12 +24,3 @@ var varlik = {
 	"agac" : preload("res://Varliklar/Agac/Agac.tscn"),
 	"tas" : preload("res://Varliklar/Tas/Tas.tscn"),
 }
-
-func getir_maks_esya_miktari() -> int:
-	return MAKS_ESYA_MIKTARI
-
-func getir_esya_sahne(esya_adi):
-	return esya[esya_adi]
-
-func getir_varlik_sahne(varlik_adi):
-	return varlik[varlik_adi]

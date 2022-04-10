@@ -6,7 +6,6 @@ var yikilmaSayi = 15
 var Sayi = 1
 
 func _process(delta):
-
 	if vurulmaSayi == Sayi :
 		animationPlayer.play("Vurulma")
 		Sayi += 1
@@ -21,3 +20,4 @@ func _on_TasAlan_area_entered(area):
 	if area.name == "PickaxeHit":
 		vurulmaSayi += 1
 		$AudioStreamPlayer2D.play()
+		

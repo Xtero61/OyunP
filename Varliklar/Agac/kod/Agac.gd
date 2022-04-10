@@ -1,7 +1,6 @@
 extends Node2D
-
 onready var animationPlayer = $AnimationPlayer
-var vurulmaSayi = 0
+export var vurulmaSayi = 0
 var yikilmaSayi = 15
 var Sayi = 1
 var sag = 0
@@ -9,12 +8,12 @@ var sol = 0
 var ust = 0
 var alt = 0
 
-func _process(delta):
+func _process(_delta):
 
 	if vurulmaSayi ==  Sayi :
 		animationPlayer.play("Vurulma")
 		Sayi +=  1
-
+		
 	if vurulmaSayi == yikilmaSayi and (ust == 1 and sol == 1):
 		animationPlayer.stop()
 		animationPlayer.play("KesilmeSağ")
@@ -39,9 +38,10 @@ func _process(delta):
 	elif vurulmaSayi == yikilmaSayi and sag == 1 :
 		animationPlayer.stop()
 		animationPlayer.play("KesilmeSol") 
-	
+
 func _Kesildim():
 	queue_free()
+	item_dusur(position)
 
 func _on_Sag_body_entered(body):
 	if body.name == "Oyuncu":
@@ -80,3 +80,11 @@ func _on_AgacAlan_area_entered(area):
 	if area.name == "AxeHit":
 		vurulmaSayi += 1
 		$AudioStreamPlayer2D.play()
+
+func item_dusur(dusme_yeri : Vector2) -> void:
+	var adet = randi() % (Genel.AGAC_MAKS_ESYA_DUSURME + 1)
+	for i in adet:
+		var item = Genel.esya["odun_esya"].instance()
+		item.position = dusme_yeri
+		item.dusme_hareketi_baslat()
+		get_parent().add_child(item)
