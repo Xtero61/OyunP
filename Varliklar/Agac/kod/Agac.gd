@@ -41,7 +41,7 @@ func _process(_delta):
 
 func _Kesildim():
     queue_free()
-    item_dusur(position)
+    Arac.esya_dusur(Genel.ESYA_ODUN, global_position)
 
 func _on_Sag_body_entered(body):
     if body.name == "Oyuncu":
@@ -80,11 +80,3 @@ func _on_AgacAlan_area_entered(area):
     if area.name == "AxeHit":
         vurulmaSayi += 1
         $AudioStreamPlayer2D.play()
-
-func item_dusur(dusme_yeri : Vector2) -> void:
-    var adet = randi() % (Genel.AGAC_MAKS_ESYA_DUSURME + 1)
-    for i in adet:
-        var item = Genel.esya["odun_esya"].instance()
-        item.position = dusme_yeri
-        item.dusme_hareketi_baslat()
-        get_parent().add_child(item)

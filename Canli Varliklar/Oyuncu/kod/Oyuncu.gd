@@ -37,20 +37,20 @@ enum{
 
 func _ready():
     hizli_erisim.esya_ekle(1,
-        Genel.esya["kazma_esya"].instance(),
-        Genel.varlik["kazma"].instance(),
+        Genel.esya[Genel.ESYA_KAZMA][Genel.ESYA_SAHNE].instance(),
+        Genel.varlik[Genel.VAR_KAZMA][Genel.VAR_SAHNE].instance(),
         1)
     hizli_erisim.esya_ekle(2,
-        Genel.esya["balta_esya"].instance(),
-        Genel.varlik["balta"].instance(),
+        Genel.esya[Genel.ESYA_BALTA][Genel.ESYA_SAHNE].instance(),
+        Genel.varlik[Genel.VAR_BALTA][Genel.VAR_SAHNE].instance(),
         1)
     hizli_erisim.esya_ekle(3,
-        Genel.esya["odun_esya"].instance(),
-        Genel.esya["odun_esya"].instance(),
+        Genel.esya[Genel.ESYA_ODUN][Genel.ESYA_SAHNE].instance(),
+        Genel.esya[Genel.ESYA_ODUN][Genel.ESYA_SAHNE].instance(),
         100)
     hizli_erisim.esya_ekle(4,
-        Genel.esya["tas_esya"].instance(),
-        Genel.esya["tas_esya"].instance(),
+        Genel.esya[Genel.ESYA_TAS][Genel.ESYA_SAHNE].instance(),
+        Genel.esya[Genel.ESYA_TAS][Genel.ESYA_SAHNE].instance(),
         12)
 
 func _physics_process(_delta):
@@ -104,7 +104,8 @@ func move():
     ivme = move_and_slide(ivme)
 
 func el_esya_degistir(yuva):
-    remove_child(el_esya)
+    if el_esya != null:
+        remove_child(el_esya)
     el_esya = hizli_erisim.getir_el_esya(yuva)
     if el_esya != null:
         add_child(el_esya)
