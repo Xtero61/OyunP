@@ -1084,7 +1084,7 @@ position = Vector2( 0, -10 )
 texture = ExtResource( 1 )
 hframes = 4
 vframes = 32
-frame = 5
+frame = 4
 
 [node name="man axe_p_att" type="Sprite" parent="."]
 visible = false
