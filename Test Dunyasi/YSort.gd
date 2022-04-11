@@ -1,4 +1,4 @@
-extends YSort
+extends Node2D
 
 
 # Declare member variables here. Examples:
@@ -8,7 +8,7 @@ extends YSort
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	scale = Genel.DUNYA_OLCEGI
+    scale = Genel.DUNYA_OLCEGI
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

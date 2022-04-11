@@ -11,7 +11,7 @@ func _process(_delta):
         Sayi += 1
 
     if vurulmaSayi == yikilmaSayi :
-        Arac.esya_dusur(Genel.ESYA_TAS, global_position)
+        Arac.esya_dusur(Genel.ESYA_TAS, position)
         animationPlayer.play("Kırılma")
         vurulmaSayi = 0
 

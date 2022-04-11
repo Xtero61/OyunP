@@ -41,7 +41,7 @@ func _process(_delta):
 
 func _Kesildim():
     queue_free()
-    Arac.esya_dusur(Genel.ESYA_ODUN, global_position)
+    Arac.esya_dusur(Genel.ESYA_ODUN, position)
 
 func _on_Sag_body_entered(body):
     if body.name == "Oyuncu":
