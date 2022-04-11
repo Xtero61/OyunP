@@ -21,6 +21,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Genel="*res://Kod/Genel.gd"
+Arac="*res://Kod/Arac.gd"
 
 [debug]
 
