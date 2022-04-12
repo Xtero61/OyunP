@@ -9,7 +9,7 @@ class Yuva:
 # var a = 2
 # var b = "text"
 
-var hizli_erisim = Array()
+var hizli_erisim = []
 var animasyonlar = [
     "sec0",
     "sec1",
@@ -37,10 +37,9 @@ func _ready():
         gecici_degisken.esya.sayiyi_ayarla(0)
         hizli_erisim.append(gecici_degisken)
 
-
     # hizli erişim çubuğunu ekranın altına ayarla
-    var hizli_erisim_boyut = $"./hotbar".get_rect().size
-    var ekran_boyut = get_viewport().get_visible_rect().size
+    var hizli_erisim_boyut: Vector2 = $"./hotbar".get_rect().size
+    var ekran_boyut: Vector2 = get_viewport().get_visible_rect().size
 
     $".".offset.x += (ekran_boyut.x / 2 - (hizli_erisim_boyut.x * Genel.DUNYA_OLCEGI.x) / 2 )
     $".".offset.y += (ekran_boyut.y - hizli_erisim_boyut.y * Genel.DUNYA_OLCEGI.y)

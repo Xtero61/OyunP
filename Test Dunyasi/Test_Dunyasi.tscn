@@ -137,10 +137,6 @@ vurulmaSayi = 14
 position = Vector2( -129.335, 43.2645 )
 vurulmaSayi = 14
 
-[node name="Agac18" parent="Yeryuzu" instance=ExtResource( 4 )]
-position = Vector2( -130.595, 70.9828 )
-vurulmaSayi = 14
-
 [node name="Agac2" parent="Yeryuzu" instance=ExtResource( 4 )]
 position = Vector2( 383.969, 320.529 )
 

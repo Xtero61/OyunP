@@ -28,13 +28,6 @@ enum{
     TAKLA
 }
 
-enum{
-    BOS,
-    KAZMA,
-    BALTA,
-    KILIC,
-}
-
 func _ready():
     hizli_erisim.esya_ekle(1,
         Genel.esya[Genel.ESYA_KAZMA][Genel.ESYA_SAHNE].instance(),
@@ -159,7 +152,8 @@ func tuslari_kontrol_et() -> void:
 
 func saldirma_durumuna_gec() -> void:
     durum = SALDIR
-    el_esya.saldir()
+    if el_esya.has_method("saldir"):
+        el_esya.saldir()
 
 func getir_hareket_vektoru() -> Vector2:
     return hareket_vektoru
