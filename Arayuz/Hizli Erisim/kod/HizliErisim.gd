@@ -46,6 +46,7 @@ func esya_ekle(yuva_sirasi: int, esya, adet: int) -> void:
     hizli_erisim[yuva_sirasi - 1].adet = adet
     hizli_erisim[yuva_sirasi - 1].esya = esya
     hizli_erisim[yuva_sirasi - 1].yuva.texture = esya.getir_simge()
+#    hizli_erisim[yuva_sirasi - 1].etikete_yaz(adet)
 
 
 func getir_el_esya(yuva_sirasi):
@@ -63,7 +64,13 @@ func yuva_sayac_ayarla(yuva_sirasi: int, sayi: int) -> void:
 func esya_at(yuva_sirasi: int):
     if hizli_erisim[yuva_sirasi -1].adet == 0:
         return
-    var olusan_esya: Esya = hizli_erisim[yuva_sirasi -1].esya
+
+    var olusan_esya: Esya
+    if hizli_erisim[yuva_sirasi -1].adet > 1:
+        olusan_esya = hizli_erisim[yuva_sirasi -1].esya.new()
+    else:
+        olusan_esya = hizli_erisim[yuva_sirasi -1].esya
+
     olusan_esya.position = oyuncu.position
     oyuncu.remove_child(olusan_esya)
     Arac.getir_ysort().add_child(olusan_esya)
@@ -72,6 +79,7 @@ func esya_at(yuva_sirasi: int):
     olusan_esya.dusme_hareketi_baslat(atilma_noktasi)
     olusan_esya.kuvvet_uygula(oyuncu.getir_hareket_vektoru(), 500)
 
-    hizli_erisim[yuva_sirasi -1].adet = 0
-    hizli_erisim[yuva_sirasi -1].esya = null
-    hizli_erisim[yuva_sirasi -1].yuva.texture = null
+    hizli_erisim[yuva_sirasi -1].adet -= 1
+    if hizli_erisim[yuva_sirasi -1].adet == 0:
+        hizli_erisim[yuva_sirasi -1].esya = null
+        hizli_erisim[yuva_sirasi -1].yuva.texture = null

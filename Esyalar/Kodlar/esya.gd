@@ -1,7 +1,6 @@
 extends RigidBody2D
 class_name Esya
 
-
 func _ready() -> void:
     $CollisionShape2D.disabled = true
     mode = MODE_STATIC

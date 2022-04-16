@@ -30,16 +30,16 @@ enum{
 }
 
 func _ready():
-    hizli_erisim.esya_ekle(2,
+    hizli_erisim.esya_ekle(1,
         Genel.esya[Genel.ESYA_TAS][Genel.ESYA_SAHNE].instance(),
         100)
-    hizli_erisim.esya_ekle(3,
+    hizli_erisim.esya_ekle(2,
         Genel.esya[Genel.ESYA_ODUN][Genel.ESYA_SAHNE].instance(),
         24)
-    hizli_erisim.esya_ekle(4,
+    hizli_erisim.esya_ekle(3,
         Genel.esya[Genel.ESYA_BALTA][Genel.ESYA_SAHNE].instance(),
         1)
-    hizli_erisim.esya_ekle(5,
+    hizli_erisim.esya_ekle(4,
         Genel.esya[Genel.ESYA_KAZMA][Genel.ESYA_SAHNE].instance(),
         1)
 
