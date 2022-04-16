@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Canli Varliklar/Oyuncu/Oyuncu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://dunyaR.tres" type="Texture" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://Varliklar/Tas/Tas.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Kullanilmamis Resim/TasToplSimge.png" type="Texture" id=6]
 [ext_resource path="res://Test Dunyasi/YSort.gd" type="Script" id=7]
-[ext_resource path="res://Esyalar/Balta/Balta.tscn" type="PackedScene" id=8]
 
 [sub_resource type="TileSet" id=1]
 0/name = "dunyaR.tres 0"
@@ -106,38 +105,6 @@ vurulmaSayi = 14
 position = Vector2( 253.218, 18.0661 )
 vurulmaSayi = 14
 
-[node name="Agac10" parent="Yeryuzu" instance=ExtResource( 4 )]
-position = Vector2( 106.27, 88.6217 )
-vurulmaSayi = 14
-
-[node name="Agac11" parent="Yeryuzu" instance=ExtResource( 4 )]
-position = Vector2( 140.288, 89.8816 )
-vurulmaSayi = 14
-
-[node name="Agac12" parent="Yeryuzu" instance=ExtResource( 4 )]
-position = Vector2( 176.825, 91.1415 )
-vurulmaSayi = 14
-
-[node name="Agac13" parent="Yeryuzu" instance=ExtResource( 4 )]
-position = Vector2( 209.583, 92.4014 )
-vurulmaSayi = 14
-
-[node name="Agac14" parent="Yeryuzu" instance=ExtResource( 4 )]
-position = Vector2( 247.381, 92.4014 )
-vurulmaSayi = 14
-
-[node name="Agac15" parent="Yeryuzu" instance=ExtResource( 4 )]
-position = Vector2( 283.919, 91.1415 )
-vurulmaSayi = 14
-
-[node name="Agac16" parent="Yeryuzu" instance=ExtResource( 4 )]
-position = Vector2( -128.076, 19.326 )
-vurulmaSayi = 14
-
-[node name="Agac17" parent="Yeryuzu" instance=ExtResource( 4 )]
-position = Vector2( -129.335, 43.2645 )
-vurulmaSayi = 14
-
 [node name="Agac2" parent="Yeryuzu" instance=ExtResource( 4 )]
 position = Vector2( 383.969, 320.529 )
 
@@ -172,54 +139,6 @@ vurulmaSayi = 14
 position = Vector2( 13.3547, 220.868 )
 vurulmaSayi = 14
 
-[node name="Tas10" parent="Yeryuzu" instance=ExtResource( 5 )]
-position = Vector2( 190.885, 281.79 )
-vurulmaSayi = 14
-
-[node name="Tas11" parent="Yeryuzu" instance=ExtResource( 5 )]
-position = Vector2( 149.013, 284.463 )
-vurulmaSayi = 14
-
-[node name="Tas12" parent="Yeryuzu" instance=ExtResource( 5 )]
-position = Vector2( 151.686, 247.936 )
-vurulmaSayi = 14
-
-[node name="Tas13" parent="Yeryuzu" instance=ExtResource( 5 )]
-position = Vector2( 189.995, 248.827 )
-vurulmaSayi = 14
-
-[node name="Tas14" parent="Yeryuzu" instance=ExtResource( 5 )]
-position = Vector2( 189.104, 218.537 )
-vurulmaSayi = 14
-
-[node name="Tas15" parent="Yeryuzu" instance=ExtResource( 5 )]
-position = Vector2( 151.686, 217.646 )
-vurulmaSayi = 14
-
-[node name="Tas16" parent="Yeryuzu" instance=ExtResource( 5 )]
-position = Vector2( 419.471, 245.435 )
-vurulmaSayi = 14
-
-[node name="Tas17" parent="Yeryuzu" instance=ExtResource( 5 )]
-position = Vector2( 379.381, 249.89 )
-vurulmaSayi = 14
-
-[node name="Tas18" parent="Yeryuzu" instance=ExtResource( 5 )]
-position = Vector2( 411.453, 266.817 )
-vurulmaSayi = 14
-
-[node name="Tas19" parent="Yeryuzu" instance=ExtResource( 5 )]
-position = Vector2( 337.509, 269.489 )
-vurulmaSayi = 14
-
-[node name="Tas20" parent="Yeryuzu" instance=ExtResource( 5 )]
-position = Vector2( 341.072, 236.526 )
-vurulmaSayi = 14
-
-[node name="Tas21" parent="Yeryuzu" instance=ExtResource( 5 )]
-position = Vector2( -63.2623, 293.922 )
-vurulmaSayi = 14
-
 [node name="Tas2" parent="Yeryuzu" instance=ExtResource( 5 )]
 position = Vector2( 449.2, 227.043 )
 
@@ -228,18 +147,3 @@ position = Vector2( 292.302, 312.849 )
 
 [node name="KampAteşi" parent="Yeryuzu" instance=ExtResource( 3 )]
 position = Vector2( 126.056, 149.84 )
-
-[node name="esya_balta" parent="Yeryuzu" instance=ExtResource( 8 )]
-position = Vector2( -5, 15.75 )
-
-[node name="esya_balta2" parent="Yeryuzu" instance=ExtResource( 8 )]
-position = Vector2( 19, 0.25 )
-
-[node name="esya_balta3" parent="Yeryuzu" instance=ExtResource( 8 )]
-position = Vector2( -21.5, -3.25 )
-
-[node name="esya_balta4" parent="Yeryuzu" instance=ExtResource( 8 )]
-position = Vector2( 11.75, 21.5 )
-
-[node name="esya_balta5" parent="Yeryuzu" instance=ExtResource( 8 )]
-position = Vector2( -29, 16.25 )

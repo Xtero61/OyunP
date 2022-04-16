@@ -1,4 +1,5 @@
 extends Sprite
+class_name Yuva
 
 var adet := 0
 # Declare member variables here. Examples:

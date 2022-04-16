@@ -18,10 +18,16 @@ _global_script_classes=[ {
 "class": "Oyuncu",
 "language": "GDScript",
 "path": "res://Canli Varliklar/Oyuncu/kod/Oyuncu.gd"
+}, {
+"base": "Sprite",
+"class": "Yuva",
+"language": "GDScript",
+"path": "res://Arayuz/Hizli Erisim/kod/yuva.gd"
 } ]
 _global_script_class_icons={
 "Esya": "",
-"Oyuncu": ""
+"Oyuncu": "",
+"Yuva": ""
 }
 
 [application]

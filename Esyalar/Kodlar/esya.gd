@@ -1,19 +1,25 @@
 extends RigidBody2D
 class_name Esya
 
+
 func _ready() -> void:
-    mode = MODE_STATIC
     $CollisionShape2D.disabled = true
+    mode = MODE_STATIC
 
 func dusme_hareketi_baslat(position: Vector2):
     position = position
     mode = MODE_RIGID
     $simge.scale = Genel.DUNYA_OLCEGI
+    $CollisionShape2D.scale = Genel.DUNYA_OLCEGI
     $CollisionShape2D.disabled = false
-    var randx = (randi() % 3 - 1) * Genel.ESYA_DUSME_RASTGELE_KUVVET
-    var randy = (randi() % 3 - 1) * Genel.ESYA_DUSME_RASTGELE_KUVVET
-    apply_central_impulse(Vector2.ONE)
-    apply_impulse(Vector2(randx, randy), Vector2(-randx, -randy))
+
+func kuvvet_uygula(yon: Vector2, kuvvet: int):
+    apply_central_impulse(yon * kuvvet)
+
+func rastgele_kuvvet_uygula():
+    var randx = (randi() % 3 - 1)
+    var randy = (randi() % 3 - 1)
+    kuvvet_uygula(Vector2(randx, randy), Genel.ESYA_DUSME_RASTGELE_KUVVET)
 
 func getir_simge():
     return get_node("simge").texture

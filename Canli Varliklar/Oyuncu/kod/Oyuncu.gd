@@ -81,7 +81,7 @@ func devin_durumu(delta) :
         animationState.travel("Yürümels")
 
     ivme = ivme.move_toward(hareket_vektoru * MAKS_HIZ, HIZLANMA * delta)
-    move()
+    ivme = move_and_slide(ivme)
 
 func saldir_durumu(_delta) -> void:
     animationTree.set("parameters/Saldırıels/blend_position", hareket_vektoru)
@@ -89,9 +89,6 @@ func saldir_durumu(_delta) -> void:
 
 func attack_Move(): # saldiri animasyonu gericagri(callback) fonk.
     durum = DUR
-
-func move():
-    ivme = move_and_slide(ivme)
 
 func el_esya_degistir(yuva):
     if el_esya != null:
