@@ -7,6 +7,9 @@ func rastgele_saymasayisi(ust_sinir: int):
 func getir_ysort():
     return get_node(Genel.YERYUZU_YOLU)
 
+func getir_oyuncu():
+    return get_node(Genel.OYUNCU_YOLU)
+
 func esya_dusur(esya: int, dusme_yeri: Vector2):
     var adet = Arac.rastgele_saymasayisi(Genel.esya[esya][Genel.ESYA_MAKS_DUSME])
     for i in adet:
@@ -15,6 +18,3 @@ func esya_dusur(esya: int, dusme_yeri: Vector2):
         getir_ysort().add_child(olusan_esya)
         olusan_esya.dusme_hareketi_baslat(dusme_yeri)
         olusan_esya.rastgele_kuvvet_uygula()
-
-func getir_simge(dugumun_kendisi):
-     dugumun_kendisi.get_node("Sprite").texture

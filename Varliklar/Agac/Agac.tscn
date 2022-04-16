@@ -296,6 +296,7 @@ blend_point_2/node = SubResource( 13 )
 blend_point_2/pos = Vector2( 0, 1 )
 blend_point_3/node = SubResource( 14 )
 blend_point_3/pos = Vector2( 0, -1 )
+blend_mode = 1
 
 [sub_resource type="AnimationNodeAnimation" id=16]
 animation = "Vurulma"
@@ -316,7 +317,7 @@ auto_advance = true
 states/Durma/node = SubResource( 21 )
 states/Durma/position = Vector2( 239.889, -9.68056 )
 states/Kesildim/node = SubResource( 15 )
-states/Kesildim/position = Vector2( 449.667, -8.50399 )
+states/Kesildim/position = Vector2( 424.667, -9.68056 )
 states/Vurma/node = SubResource( 17 )
 states/Vurma/position = Vector2( 240.333, 84.7778 )
 transitions = [ "Vurma", "Durma", SubResource( 22 ), "Durma", "Vurma", SubResource( 23 ), "Durma", "Kesildim", SubResource( 24 ) ]
@@ -367,7 +368,7 @@ anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 20 )
 parameters/Durma/blend_position = 0
-parameters/Kesildim/blend_position = Vector2( 0, 0 )
+parameters/Kesildim/blend_position = -0.0022676
 parameters/Vurma/blend_position = Vector2( 0, 0 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]

@@ -1,6 +1,6 @@
 extends Node2D
 
-onready var oyuncu: Oyuncu = get_node(Genel.OYUNCU_YOLU)
+onready var oyuncu: Oyuncu = Arac.getir_oyuncu()
 onready var animasyon_agaci: AnimationTree = $AnimationTree
 onready var animasyon_oynatici: AnimationPlayer = $AnimationPlayer
 onready var animasyon_durumu = animasyon_agaci.get("parameters/playback")
