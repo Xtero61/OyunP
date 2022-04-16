@@ -430,7 +430,7 @@ anims/sec7 = SubResource( 8 )
 anims/sec8 = SubResource( 9 )
 anims/sec9 = SubResource( 10 )
 
-[node name="yuva1" type="Position2D" parent="."]
+[node name="yuva1" type="Sprite" parent="."]
 position = Vector2( 29, 29 )
 script = ExtResource( 2 )
 
@@ -444,7 +444,7 @@ custom_fonts/font = ExtResource( 1 )
 text = "100"
 align = 1
 
-[node name="yuva2" type="Position2D" parent="."]
+[node name="yuva2" type="Sprite" parent="."]
 position = Vector2( 85, 29 )
 script = ExtResource( 2 )
 
@@ -458,7 +458,7 @@ custom_fonts/font = ExtResource( 1 )
 text = "100"
 align = 1
 
-[node name="yuva3" type="Position2D" parent="."]
+[node name="yuva3" type="Sprite" parent="."]
 position = Vector2( 141, 29 )
 script = ExtResource( 2 )
 
@@ -472,7 +472,7 @@ custom_fonts/font = ExtResource( 1 )
 text = "100"
 align = 1
 
-[node name="yuva4" type="Position2D" parent="."]
+[node name="yuva4" type="Sprite" parent="."]
 position = Vector2( 197, 29 )
 script = ExtResource( 2 )
 
@@ -486,7 +486,7 @@ custom_fonts/font = ExtResource( 1 )
 text = "100"
 align = 1
 
-[node name="yuva5" type="Position2D" parent="."]
+[node name="yuva5" type="Sprite" parent="."]
 position = Vector2( 253, 29 )
 script = ExtResource( 2 )
 
@@ -500,7 +500,7 @@ custom_fonts/font = ExtResource( 1 )
 text = "100"
 align = 1
 
-[node name="yuva6" type="Position2D" parent="."]
+[node name="yuva6" type="Sprite" parent="."]
 position = Vector2( 309, 29 )
 script = ExtResource( 2 )
 
@@ -514,7 +514,7 @@ custom_fonts/font = ExtResource( 1 )
 text = "100"
 align = 1
 
-[node name="yuva7" type="Position2D" parent="."]
+[node name="yuva7" type="Sprite" parent="."]
 position = Vector2( 365, 29 )
 script = ExtResource( 2 )
 
@@ -528,7 +528,7 @@ custom_fonts/font = ExtResource( 1 )
 text = "100"
 align = 1
 
-[node name="yuva8" type="Position2D" parent="."]
+[node name="yuva8" type="Sprite" parent="."]
 position = Vector2( 421, 29 )
 script = ExtResource( 2 )
 
@@ -542,7 +542,7 @@ custom_fonts/font = ExtResource( 1 )
 text = "100"
 align = 1
 
-[node name="yuva9" type="Position2D" parent="."]
+[node name="yuva9" type="Sprite" parent="."]
 position = Vector2( 477, 29 )
 script = ExtResource( 2 )
 

@@ -1,9 +1,10 @@
 extends CanvasLayer
 
 class Yuva:
-    var adet
-    var esya
-    var gercek_esya
+    var adet: int
+    var esya: Esya
+    var yuva
+
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -23,7 +24,7 @@ var animasyonlar = [
     "sec9",
 ]
 
-onready var oyuncu = get_parent()
+onready var oyuncu: Oyuncu = get_parent()
 
 var eski_yuva: int = 1
 var yuva: int = 1
@@ -32,9 +33,9 @@ func _ready():
     for i in range(1,10):
         var yuva_ismi = "yuva" + str(i)
         var gecici_degisken = Yuva.new()
-        gecici_degisken.esya = get_node(yuva_ismi)
+        gecici_degisken.yuva = get_node(yuva_ismi)
         gecici_degisken.adet = 0
-        gecici_degisken.esya.sayiyi_ayarla(0)
+        gecici_degisken.yuva.sayiyi_ayarla(0)
         hizli_erisim.append(gecici_degisken)
 
     # hizli erişim çubuğunu ekranın altına ayarla
@@ -53,16 +54,30 @@ func _process(_delta):
         eski_yuva = yuva
         $AnimationPlayer.play(animasyonlar[yuva])
 
-func esya_ekle(_yuva: int, esya, varlik, adet: int) -> void:
-    hizli_erisim[_yuva - 1].esya.sayiyi_ayarla(adet)
-    hizli_erisim[_yuva - 1].esya.add_child(esya)
-    if varlik != null:
-        hizli_erisim[_yuva - 1].gercek_esya = varlik
+func esya_ekle(yuva_sirasi: int, esya, adet: int) -> void:
+    hizli_erisim[yuva_sirasi - 1].adet = adet
+    hizli_erisim[yuva_sirasi - 1].esya = esya
+    hizli_erisim[yuva_sirasi - 1].yuva.texture = esya.getir_simge()
+
+
+func getir_el_esya(yuva_sirasi):
+    if hizli_erisim[yuva_sirasi - 1].adet == 0:
+        return null
+
+    if hizli_erisim[yuva_sirasi - 1].esya.has_method("getir_varlik"):
+        return hizli_erisim[yuva_sirasi - 1].esya.varlik
     else:
-        hizli_erisim[_yuva - 1].gercek_esya = esya
+        return hizli_erisim[yuva_sirasi - 1].esya
 
-func getir_el_esya(_yuva):
-    return hizli_erisim[_yuva - 1].gercek_esya
+func yuva_sayac_ayarla(yuva_sirasi: int, sayi: int) -> void:
+    hizli_erisim[yuva_sirasi - 1].adet = sayi
 
-func yuva_sayac_ayarla(_yuva: int, sayi: int) -> void:
-    hizli_erisim[_yuva - 1].esya.sayiyi_ayarla(sayi)
+func esya_at(yuva_sirasi: int):
+    var esya = hizli_erisim[yuva_sirasi -1].esya
+    print("esya atildi")
+    remove_child(esya)
+    Arac.getir_ysort().add_child(esya)
+    esya.dusme_hareketi_baslat(oyuncu.position)
+    hizli_erisim[yuva_sirasi -1].adet = 0
+    hizli_erisim[yuva_sirasi -1].esya = null
+    hizli_erisim[yuva_sirasi -1].yuva.texture = null

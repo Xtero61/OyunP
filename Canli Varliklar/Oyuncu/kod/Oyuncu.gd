@@ -1,4 +1,5 @@
 extends KinematicBody2D
+class_name Oyuncu
 
 const HIZLANMA = 700
 const MAKS_HIZ = 120
@@ -29,22 +30,18 @@ enum{
 }
 
 func _ready():
-    hizli_erisim.esya_ekle(1,
-        Genel.esya[Genel.ESYA_KAZMA][Genel.ESYA_SAHNE].instance(),
-        Genel.varlik[Genel.VAR_KAZMA][Genel.VAR_SAHNE].instance(),
-        1)
     hizli_erisim.esya_ekle(2,
-        Genel.esya[Genel.ESYA_BALTA][Genel.ESYA_SAHNE].instance(),
-        Genel.varlik[Genel.VAR_BALTA][Genel.VAR_SAHNE].instance(),
-        1)
+        Genel.esya[Genel.ESYA_TAS][Genel.ESYA_SAHNE].instance(),
+        100)
     hizli_erisim.esya_ekle(3,
         Genel.esya[Genel.ESYA_ODUN][Genel.ESYA_SAHNE].instance(),
-        Genel.esya[Genel.ESYA_ODUN][Genel.ESYA_SAHNE].instance(),
-        100)
+        24)
     hizli_erisim.esya_ekle(4,
-        Genel.esya[Genel.ESYA_TAS][Genel.ESYA_SAHNE].instance(),
-        Genel.esya[Genel.ESYA_TAS][Genel.ESYA_SAHNE].instance(),
-        12)
+        Genel.esya[Genel.ESYA_BALTA][Genel.ESYA_SAHNE].instance(),
+        1)
+    hizli_erisim.esya_ekle(5,
+        Genel.esya[Genel.ESYA_KAZMA][Genel.ESYA_SAHNE].instance(),
+        1)
 
 func _physics_process(_delta):
     pass
@@ -149,6 +146,10 @@ func tuslari_kontrol_et() -> void:
     if secili_yuva != eski_yuva:
         el_esya_degistir(secili_yuva)
     eski_yuva = secili_yuva
+
+    if Input.is_action_just_pressed("esya_at"):
+        hizli_erisim.esya_at(secili_yuva)
+        el_esya_degistir(secili_yuva) # Elde duran aletten de kurtulmak için
 
 func saldirma_durumuna_gec() -> void:
     durum = SALDIR

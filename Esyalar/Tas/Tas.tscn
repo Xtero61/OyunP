@@ -1,21 +1,19 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Esyalar/Tas/resim/TasSimge.png" type="Texture" id=1]
-[ext_resource path="res://Esyalar/Tas/Tas.gd" type="Script" id=2]
+[ext_resource path="res://Esyalar/Kodlar/esya.gd" type="Script" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 6.0
 height = 3.0
 
-[node name="tas_esya" type="RigidBody2D"]
-mode = 1
+[node name="esya_tas" type="RigidBody2D"]
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 1 )
 rotation = 1.5708
 shape = SubResource( 1 )
-disabled = true
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="simge" type="Sprite" parent="."]
 texture = ExtResource( 1 )

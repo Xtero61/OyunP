@@ -1,6 +1,6 @@
-extends Position2D
+extends Sprite
 
-
+var adet := 0
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -14,12 +14,19 @@ func _ready():
     label_kok.scale.x = 1 / scale.x
     label_kok.scale.y = 1 / scale.y
 
-
-func sayiyi_ayarla(sayi:int):
+func etikete_yaz(sayi :int):
     if sayi <= 1:
         etiket.text = ""
     else:
         etiket.text = str(sayi)
+
+func ekle(sayi:int):
+    adet += sayi
+    etikete_yaz(adet)
+
+func sayiyi_ayarla(sayi:int):
+    etikete_yaz(sayi)
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

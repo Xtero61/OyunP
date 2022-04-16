@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Canli Varliklar/Oyuncu/Oyuncu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://dunyaR.tres" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Varliklar/Tas/Tas.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Kullanilmamis Resim/TasToplSimge.png" type="Texture" id=6]
 [ext_resource path="res://Test Dunyasi/YSort.gd" type="Script" id=7]
+[ext_resource path="res://Esyalar/Balta/Balta.tscn" type="PackedScene" id=8]
 
 [sub_resource type="TileSet" id=1]
 0/name = "dunyaR.tres 0"
@@ -227,3 +228,18 @@ position = Vector2( 292.302, 312.849 )
 
 [node name="KampAteşi" parent="Yeryuzu" instance=ExtResource( 3 )]
 position = Vector2( 126.056, 149.84 )
+
+[node name="esya_balta" parent="Yeryuzu" instance=ExtResource( 8 )]
+position = Vector2( -5, 15.75 )
+
+[node name="esya_balta2" parent="Yeryuzu" instance=ExtResource( 8 )]
+position = Vector2( 19, 0.25 )
+
+[node name="esya_balta3" parent="Yeryuzu" instance=ExtResource( 8 )]
+position = Vector2( -21.5, -3.25 )
+
+[node name="esya_balta4" parent="Yeryuzu" instance=ExtResource( 8 )]
+position = Vector2( 11.75, 21.5 )
+
+[node name="esya_balta5" parent="Yeryuzu" instance=ExtResource( 8 )]
+position = Vector2( -29, 16.25 )

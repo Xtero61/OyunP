@@ -8,8 +8,20 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "RigidBody2D",
+"class": "Esya",
+"language": "GDScript",
+"path": "res://Esyalar/Kodlar/esya.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Oyuncu",
+"language": "GDScript",
+"path": "res://Canli Varliklar/Oyuncu/kod/Oyuncu.gd"
+} ]
 _global_script_class_icons={
+"Esya": "",
+"Oyuncu": ""
 }
 
 [application]
@@ -35,6 +47,10 @@ window/size/test_width=640
 window/size/test_height=420
 window/vsync/use_vsync=false
 window/stretch/mode="2d"
+
+[editor_plugins]
+
+enabled=PoolStringArray(  )
 
 [global]
 
@@ -120,6 +136,11 @@ he_8={
 he_9={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":57,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+esya_at={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":81,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
 
