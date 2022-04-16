@@ -5,12 +5,7 @@ class Yuva_veri:
     var esya: Esya
     var yuva: Yuva
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-var hizli_erisim = []
+var hizli_erisim: Array = []
 
 onready var oyuncu: Oyuncu = get_parent()
 
@@ -37,8 +32,8 @@ func _ready():
 func _process(_delta):
     eski_yuva = yuva
     yuva = oyuncu.getir_secili_yuva()
-    
-    
+
+
     if(eski_yuva != yuva):
         eski_yuva = yuva
         if yuva == 0 :
@@ -51,6 +46,7 @@ func esya_ekle(yuva_sirasi: int, esya, adet: int) -> void:
     hizli_erisim[yuva_sirasi - 1].adet = adet
     hizli_erisim[yuva_sirasi - 1].esya = esya
     hizli_erisim[yuva_sirasi - 1].yuva.texture = esya.getir_simge()
+#    hizli_erisim[yuva_sirasi - 1].etikete_yaz(adet)
 
 
 func getir_el_esya(yuva_sirasi):
@@ -68,13 +64,22 @@ func yuva_sayac_ayarla(yuva_sirasi: int, sayi: int) -> void:
 func esya_at(yuva_sirasi: int):
     if hizli_erisim[yuva_sirasi -1].adet == 0:
         return
-    var olusan_esya: Esya = hizli_erisim[yuva_sirasi -1].esya
+
+    var olusan_esya: Esya
+    if hizli_erisim[yuva_sirasi -1].adet > 1:
+        olusan_esya = hizli_erisim[yuva_sirasi -1].esya.new()
+    else:
+        olusan_esya = hizli_erisim[yuva_sirasi -1].esya
+
     olusan_esya.position = oyuncu.position
     oyuncu.remove_child(olusan_esya)
     Arac.getir_ysort().add_child(olusan_esya)
-    olusan_esya.dusme_hareketi_baslat(oyuncu.position)
+    var atilma_noktasi: Vector2 = oyuncu.position + oyuncu.getir_hareket_vektoru()
+    print(atilma_noktasi, oyuncu.position)
+    olusan_esya.dusme_hareketi_baslat(atilma_noktasi)
     olusan_esya.kuvvet_uygula(oyuncu.getir_hareket_vektoru(), 500)
 
-    hizli_erisim[yuva_sirasi -1].adet = 0
-    hizli_erisim[yuva_sirasi -1].esya = null
-    hizli_erisim[yuva_sirasi -1].yuva.texture = null
+    hizli_erisim[yuva_sirasi -1].adet -= 1
+    if hizli_erisim[yuva_sirasi -1].adet == 0:
+        hizli_erisim[yuva_sirasi -1].esya = null
+        hizli_erisim[yuva_sirasi -1].yuva.texture = null
