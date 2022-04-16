@@ -8,7 +8,7 @@ const TAKLA_HIZ = 225
 
 var elde_esya_var: bool = false # Elde esya var mi
 var el_esya # Eldeki esya nesnesi
-var hareket_vektoru : Vector2 = Vector2.ZERO # Hareket vektörü
+var hareket_vektoru : Vector2 = Vector2(1, 0) # Hareket vektörü
 var kosuyor : bool = false # Karakter kosuyor mu
 var ivme: Vector2 = Vector2.ZERO # İvme vektörü
 var durum : int = DUR

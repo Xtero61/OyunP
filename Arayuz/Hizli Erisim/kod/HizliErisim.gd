@@ -5,7 +5,7 @@ class Yuva_veri:
     var esya: Esya
     var yuva: Yuva
 
-var hizli_erisim = []
+var hizli_erisim: Array = []
 
 onready var oyuncu: Oyuncu = get_parent()
 
@@ -67,7 +67,9 @@ func esya_at(yuva_sirasi: int):
     olusan_esya.position = oyuncu.position
     oyuncu.remove_child(olusan_esya)
     Arac.getir_ysort().add_child(olusan_esya)
-    olusan_esya.dusme_hareketi_baslat(oyuncu.position)
+    var atilma_noktasi: Vector2 = oyuncu.position + oyuncu.getir_hareket_vektoru()
+    print(atilma_noktasi, oyuncu.position)
+    olusan_esya.dusme_hareketi_baslat(atilma_noktasi)
     olusan_esya.kuvvet_uygula(oyuncu.getir_hareket_vektoru(), 500)
 
     hizli_erisim[yuva_sirasi -1].adet = 0

@@ -6,8 +6,8 @@ func _ready() -> void:
     $CollisionShape2D.disabled = true
     mode = MODE_STATIC
 
-func dusme_hareketi_baslat(position: Vector2):
-    position = position
+func dusme_hareketi_baslat(dusme_yeri: Vector2):
+    position = dusme_yeri
     mode = MODE_RIGID
     $simge.scale = Genel.DUNYA_OLCEGI
     $CollisionShape2D.scale = Genel.DUNYA_OLCEGI
