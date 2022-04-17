@@ -116,7 +116,6 @@ radius = 6.01343
 height = 19.2321
 
 [node name="Tas" type="Node2D"]
-scale = Vector2( 2, 2 )
 script = ExtResource( 3 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

@@ -1,6 +1,5 @@
 extends KinematicBody2D
-
-onready var anadugum = get_node("/root/Dunya/AnaDugum")
+class_name Oyuncu
 
 const HIZLANMA = 700
 const MAKS_HIZ = 120
@@ -13,7 +12,7 @@ var hareket_vektoru : Vector2 = Vector2.ZERO # Hareket vektörü
 var kosuyor : bool = false # Karakter kosuyor mu
 var ivme: Vector2 = Vector2.ZERO # İvme vektörü
 var durum : int = DUR
-var maks_mesafe : int = 12 
+var maks_mesafe : int = 12
 var secili_yuva : int = 1
 var eski_yuva : int = 0
 
@@ -24,38 +23,27 @@ onready var hizli_erisim = $HizliErisim
 
 enum{
 	DUR,
-	DEVIN, # bkz. devinmek 
+	DEVIN, # bkz. devinmek
 	SALDIR,
 	OL,
 	TAKLA
 }
 
-enum{
-	BOS,
-	KAZMA,
-	BALTA,
-	KILIC,
-}
-
 func _ready():
-	hizli_erisim.esya_ekle(1, 
-		anadugum.getir_esya_sahne("kazma_esya").instance(),
-		anadugum.getir_varlik_sahne("kazma").instance(),
-		1)
 	hizli_erisim.esya_ekle(2,
-		anadugum.getir_esya_sahne("balta_esya").instance(),
-		anadugum.getir_varlik_sahne("balta").instance(),
-		1)
+		Genel.esya[Genel.ESYA_TAS][Genel.ESYA_SAHNE].instance(),
+		100)
 	hizli_erisim.esya_ekle(3,
-		anadugum.getir_esya_sahne("odun_esya").instance(),
-		anadugum.getir_esya_sahne("odun_esya").instance(),
-		50)
+		Genel.esya[Genel.ESYA_ODUN][Genel.ESYA_SAHNE].instance(),
+		24)
 	hizli_erisim.esya_ekle(4,
-		anadugum.getir_esya_sahne("tas_esya").instance(),
-		anadugum.getir_esya_sahne("tas_esya").instance(),
-		12)
+		Genel.esya[Genel.ESYA_BALTA][Genel.ESYA_SAHNE].instance(),
+		1)
+	hizli_erisim.esya_ekle(5,
+		Genel.esya[Genel.ESYA_KAZMA][Genel.ESYA_SAHNE].instance(),
+		1)
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	pass
 
 func _process(delta):
@@ -72,7 +60,7 @@ func _process(delta):
 		OL:
 			pass
 	tuslari_kontrol_et()
-	
+
 func dur_durumu(delta):
 	if !elde_esya_var:
 		animationTree.set("parameters/Duruş/blend_position", hareket_vektoru)
@@ -93,27 +81,25 @@ func devin_durumu(delta) :
 		animationState.travel("Yürümels")
 
 	ivme = ivme.move_toward(hareket_vektoru * MAKS_HIZ, HIZLANMA * delta)
-	move()
+	ivme = move_and_slide(ivme)
 
-func saldir_durumu(delta) -> void:
+func saldir_durumu(_delta) -> void:
 	animationTree.set("parameters/Saldırıels/blend_position", hareket_vektoru)
 	animationState.travel("Saldırıels")
 
 func attack_Move(): # saldiri animasyonu gericagri(callback) fonk.
-	durum = DUR 
-
-func move():
-	ivme = move_and_slide(ivme)
+	durum = DUR
 
 func el_esya_degistir(yuva):
-	remove_child(el_esya)
+	if el_esya != null:
+		remove_child(el_esya)
 	el_esya = hizli_erisim.getir_el_esya(yuva)
 	if el_esya != null:
 		add_child(el_esya)
 		elde_esya_var = true
 	else:
 		elde_esya_var = false
-	
+
 
 func tuslari_kontrol_et() -> void:
 	if Input.is_action_pressed("Saldırı") and elde_esya_var:
@@ -158,13 +144,18 @@ func tuslari_kontrol_et() -> void:
 		el_esya_degistir(secili_yuva)
 	eski_yuva = secili_yuva
 
+	if Input.is_action_just_pressed("esya_at"):
+		hizli_erisim.esya_at(secili_yuva)
+		el_esya_degistir(secili_yuva) # Elde duran aletten de kurtulmak için
+
 func saldirma_durumuna_gec() -> void:
 	durum = SALDIR
-	el_esya.saldir()
+	if el_esya.has_method("saldir"):
+		el_esya.saldir()
 
 func getir_hareket_vektoru() -> Vector2:
 	return hareket_vektoru
-	
+
 func getir_kosuyor() -> bool:
 	return kosuyor
 

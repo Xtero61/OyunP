@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Fontlar/hizli_erisim_font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Arayuz/Hizli Erisim/kod/yuva.gd" type="Script" id=2]
@@ -7,19 +7,20 @@
 [ext_resource path="res://Kullanilmamis Resim/hotbarSec.png" type="Texture" id=5]
 
 [sub_resource type="Animation" id=1]
-resource_name = "sec0"
-length = 0.001
+resource_name = "sec"
+length = 0.05
+step = 0.05
 tracks/0/type = "value"
-tracks/0/path = NodePath("hotbarSec:position")
+tracks/0/path = NodePath("hotbarSec:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.05 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 200, 504 ) ]
+"values": [ Vector2( 4, 4 ), Vector2( 2, 2 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("hotbarSec:visible")
@@ -28,379 +29,26 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "sec 0"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("hotbarSec:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
-}
-
-[sub_resource type="Animation" id=2]
-resource_name = "sec1"
-length = 0.05
-step = 0.05
-tracks/0/type = "value"
-tracks/0/path = NodePath("hotbarSec:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 256, 504 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("hotbarSec:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("hotbarSec:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.05 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 3, 3 ), Vector2( 2, 2 ) ]
-}
-
-[sub_resource type="Animation" id=3]
-resource_name = "sec2"
-length = 0.05
-step = 0.01
-tracks/0/type = "value"
-tracks/0/path = NodePath("hotbarSec:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 312, 504 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("hotbarSec:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("hotbarSec:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.05 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 3, 3 ), Vector2( 2, 2 ) ]
-}
-
-[sub_resource type="Animation" id=4]
-resource_name = "sec3"
-length = 0.05
-step = 0.05
-tracks/0/type = "value"
-tracks/0/path = NodePath("hotbarSec:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 368, 504 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("hotbarSec:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("hotbarSec:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.05 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 3, 3 ), Vector2( 2, 2 ) ]
-}
-
-[sub_resource type="Animation" id=5]
-resource_name = "sec4"
-length = 0.05
-step = 0.05
-tracks/0/type = "value"
-tracks/0/path = NodePath("hotbarSec:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 424, 504 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("hotbarSec:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("hotbarSec:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.05 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 3, 3 ), Vector2( 2, 2 ) ]
-}
-
-[sub_resource type="Animation" id=6]
-resource_name = "sec5"
-length = 0.05
-step = 0.05
-tracks/0/type = "value"
-tracks/0/path = NodePath("hotbarSec:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 480, 504 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("hotbarSec:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("hotbarSec:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.05 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 3, 3 ), Vector2( 2, 2 ) ]
-}
-
-[sub_resource type="Animation" id=7]
-resource_name = "sec6"
-length = 0.05
-step = 0.05
-tracks/0/type = "value"
-tracks/0/path = NodePath("hotbarSec:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 536, 504 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("hotbarSec:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("hotbarSec:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.05 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 3, 3 ), Vector2( 2, 2 ) ]
-}
-
-[sub_resource type="Animation" id=8]
-resource_name = "sec7"
-length = 0.05
-step = 0.05
-tracks/0/type = "value"
-tracks/0/path = NodePath("hotbarSec:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 592, 504 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("hotbarSec:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("hotbarSec:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.05 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 3, 3 ), Vector2( 2, 2 ) ]
-}
-
-[sub_resource type="Animation" id=9]
-resource_name = "sec8"
-length = 0.05
-step = 0.05
-tracks/0/type = "value"
-tracks/0/path = NodePath("hotbarSec:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 648, 504 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("hotbarSec:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("hotbarSec:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.05 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 3, 3 ), Vector2( 2, 2 ) ]
-}
-
-[sub_resource type="Animation" id=10]
-resource_name = "sec9"
-length = 0.05
-step = 0.05
-tracks/0/type = "value"
-tracks/0/path = NodePath("hotbarSec:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 704, 504 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("hotbarSec:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("hotbarSec:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.05 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 3, 3 ), Vector2( 2, 2 ) ]
 }
 
 [node name="HizliErisim" type="CanvasLayer"]
@@ -413,154 +61,136 @@ z_index = -1
 texture = ExtResource( 4 )
 
 [node name="hotbarSec" type="Sprite" parent="."]
-position = Vector2( 256, 504 )
-scale = Vector2( 3, 3 )
+position = Vector2( 29, 29 )
+scale = Vector2( 2, 2 )
 texture = ExtResource( 5 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "sec1"
-anims/sec0 = SubResource( 1 )
-anims/sec1 = SubResource( 2 )
-anims/sec2 = SubResource( 3 )
-anims/sec3 = SubResource( 4 )
-anims/sec4 = SubResource( 5 )
-anims/sec5 = SubResource( 6 )
-anims/sec6 = SubResource( 7 )
-anims/sec7 = SubResource( 8 )
-anims/sec8 = SubResource( 9 )
-anims/sec9 = SubResource( 10 )
+anims/sec = SubResource( 1 )
+"anims/sec 0" = SubResource( 2 )
 
-[node name="yuva1" type="Position2D" parent="."]
+[node name="yuva1" type="Sprite" parent="."]
 position = Vector2( 29, 29 )
-scale = Vector2( 2, 2 )
 script = ExtResource( 2 )
 
 [node name="label_kok" type="Node2D" parent="yuva1"]
 
 [node name="Label" type="Label" parent="yuva1/label_kok"]
-margin_left = -12.0
-margin_top = -12.0
-margin_bottom = -2.0
+margin_left = -21.0
+margin_top = -21.0
+margin_bottom = -7.0
 custom_fonts/font = ExtResource( 1 )
 text = "100"
 align = 1
 
-[node name="yuva2" type="Position2D" parent="."]
+[node name="yuva2" type="Sprite" parent="."]
 position = Vector2( 85, 29 )
-scale = Vector2( 2, 2 )
 script = ExtResource( 2 )
 
 [node name="label_kok" type="Node2D" parent="yuva2"]
 
 [node name="Label" type="Label" parent="yuva2/label_kok"]
-margin_left = -12.0
-margin_top = -12.0
-margin_bottom = -2.0
+margin_left = -21.0
+margin_top = -21.0
+margin_bottom = -7.0
 custom_fonts/font = ExtResource( 1 )
 text = "100"
 align = 1
 
-[node name="yuva3" type="Position2D" parent="."]
+[node name="yuva3" type="Sprite" parent="."]
 position = Vector2( 141, 29 )
-scale = Vector2( 2, 2 )
 script = ExtResource( 2 )
 
 [node name="label_kok" type="Node2D" parent="yuva3"]
 
 [node name="Label" type="Label" parent="yuva3/label_kok"]
-margin_left = -12.0
-margin_top = -12.0
-margin_bottom = -2.0
+margin_left = -21.0
+margin_top = -21.0
+margin_bottom = -7.0
 custom_fonts/font = ExtResource( 1 )
 text = "100"
 align = 1
 
-[node name="yuva4" type="Position2D" parent="."]
+[node name="yuva4" type="Sprite" parent="."]
 position = Vector2( 197, 29 )
-scale = Vector2( 2, 2 )
 script = ExtResource( 2 )
 
 [node name="label_kok" type="Node2D" parent="yuva4"]
 
 [node name="Label" type="Label" parent="yuva4/label_kok"]
-margin_left = -12.0
-margin_top = -12.0
-margin_bottom = -2.0
+margin_left = -21.0
+margin_top = -21.0
+margin_bottom = -7.0
 custom_fonts/font = ExtResource( 1 )
 text = "100"
 align = 1
 
-[node name="yuva5" type="Position2D" parent="."]
+[node name="yuva5" type="Sprite" parent="."]
 position = Vector2( 253, 29 )
-scale = Vector2( 2, 2 )
 script = ExtResource( 2 )
 
 [node name="label_kok" type="Node2D" parent="yuva5"]
 
 [node name="Label" type="Label" parent="yuva5/label_kok"]
-margin_left = -12.0
-margin_top = -12.0
-margin_bottom = -2.0
+margin_left = -21.0
+margin_top = -21.0
+margin_bottom = -7.0
 custom_fonts/font = ExtResource( 1 )
 text = "100"
 align = 1
 
-[node name="yuva6" type="Position2D" parent="."]
+[node name="yuva6" type="Sprite" parent="."]
 position = Vector2( 309, 29 )
-scale = Vector2( 2, 2 )
 script = ExtResource( 2 )
 
 [node name="label_kok" type="Node2D" parent="yuva6"]
 
 [node name="Label" type="Label" parent="yuva6/label_kok"]
-margin_left = -12.0
-margin_top = -12.0
-margin_bottom = -2.0
+margin_left = -21.0
+margin_top = -21.0
+margin_bottom = -7.0
 custom_fonts/font = ExtResource( 1 )
 text = "100"
 align = 1
 
-[node name="yuva7" type="Position2D" parent="."]
+[node name="yuva7" type="Sprite" parent="."]
 position = Vector2( 365, 29 )
-scale = Vector2( 2, 2 )
 script = ExtResource( 2 )
 
 [node name="label_kok" type="Node2D" parent="yuva7"]
 
 [node name="Label" type="Label" parent="yuva7/label_kok"]
-margin_left = -12.0
-margin_top = -12.0
-margin_bottom = -2.0
+margin_left = -21.0
+margin_top = -21.0
+margin_bottom = -7.0
 custom_fonts/font = ExtResource( 1 )
 text = "100"
 align = 1
 
-[node name="yuva8" type="Position2D" parent="."]
+[node name="yuva8" type="Sprite" parent="."]
 position = Vector2( 421, 29 )
-scale = Vector2( 2, 2 )
 script = ExtResource( 2 )
 
 [node name="label_kok" type="Node2D" parent="yuva8"]
 
 [node name="Label" type="Label" parent="yuva8/label_kok"]
-margin_left = -12.0
-margin_top = -12.0
-margin_bottom = -2.0
+margin_left = -21.0
+margin_top = -21.0
+margin_bottom = -7.0
 custom_fonts/font = ExtResource( 1 )
 text = "100"
 align = 1
 
-[node name="yuva9" type="Position2D" parent="."]
+[node name="yuva9" type="Sprite" parent="."]
 position = Vector2( 477, 29 )
-scale = Vector2( 2, 2 )
 script = ExtResource( 2 )
 
 [node name="label_kok" type="Node2D" parent="yuva9"]
 
 [node name="Label" type="Label" parent="yuva9/label_kok"]
-margin_left = -12.0
-margin_top = -12.0
-margin_bottom = -2.0
+margin_left = -21.0
+margin_top = -21.0
+margin_bottom = -7.0
 custom_fonts/font = ExtResource( 1 )
 text = "100"
 align = 1

@@ -4,7 +4,7 @@ var durum: int = DEVIN
 
 onready var animasyonAgaci = $AnimationTree
 onready var animasyonDurumu = animasyonAgaci.get("parameters/playback")
-onready var oyuncu = get_node("/root/Dunya/AnaDugum/Oyuncu")
+onready var oyuncu = get_node(Genel.OYUNCU_YOLU)
 onready var input_vector = oyuncu.getir_hareket_vektoru()
 onready var run = oyuncu.getir_kosuyor()
 
@@ -22,32 +22,31 @@ func _ready():
 	animasyon.active = true
 
 func _physics_process(delta) :
+	input_vector = oyuncu.getir_hareket_vektoru()
+	run = oyuncu.getir_kosuyor()
+	animasyon_guncelle()
+
 	match durum :
 		DEVIN :
-			devin_durum(delta)
+			devin_durum()
 		SALDIR :
 			saldir_durum()
 		OL:
 			pass
 
-func devin_durum(delta) :
-	input_vector = oyuncu.getir_hareket_vektoru()
-	run = oyuncu.getir_kosuyor()
-
-	animasyon_guncelle()
+func devin_durum() :
 	if run :
 		animasyonDurumu.travel("Yürüme")
-
 	else :
 		animasyonDurumu.travel("Duruş")
+
+func saldir_durum():
+	animasyonDurumu.travel("Saldırı")
 
 func animasyon_guncelle() -> void:
 	animasyonAgaci.set("parameters/Saldırı/blend_position", input_vector)
 	animasyonAgaci.set("parameters/Duruş/blend_position", input_vector)
-	animasyonAgaci.set("parameters/Yürüme/blend_position", input_vector)	
-
-func saldir_durum():
-	animasyonDurumu.travel("Saldırı")
+	animasyonAgaci.set("parameters/Yürüme/blend_position", input_vector)
 
 func attack_Move():
 	durum = DEVIN

@@ -1,18 +1,19 @@
 extends Node2D
 
 onready var animationPlayer = $AnimationPlayer
-var vurulmaSayi = 0
+export var vurulmaSayi = 0
 var yikilmaSayi = 15
 var Sayi = 1
 
-func _process(delta):
-
+func _process(_delta):
 	if vurulmaSayi == Sayi :
 		animationPlayer.play("Vurulma")
 		Sayi += 1
 
 	if vurulmaSayi == yikilmaSayi :
+		Arac.esya_dusur(Genel.ESYA_TAS, position)
 		animationPlayer.play("Kırılma")
+		vurulmaSayi = 0
 
 func _Kirildim():
 	queue_free()

@@ -1,7 +1,6 @@
 extends Node2D
-
 onready var animationPlayer = $AnimationPlayer
-var vurulmaSayi = 0
+export var vurulmaSayi = 0
 var yikilmaSayi = 15
 var Sayi = 1
 var sag = 0
@@ -9,7 +8,7 @@ var sol = 0
 var ust = 0
 var alt = 0
 
-func _process(delta):
+func _process(_delta):
 
 	if vurulmaSayi ==  Sayi :
 		animationPlayer.play("Vurulma")
@@ -38,10 +37,11 @@ func _process(delta):
 		animationPlayer.play("KesilmeSol")
 	elif vurulmaSayi == yikilmaSayi and sag == 1 :
 		animationPlayer.stop()
-		animationPlayer.play("KesilmeSol") 
-	
+		animationPlayer.play("KesilmeSol")
+
 func _Kesildim():
 	queue_free()
+	Arac.esya_dusur(Genel.ESYA_ODUN, position)
 
 func _on_Sag_body_entered(body):
 	if body.name == "Oyuncu":
