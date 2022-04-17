@@ -21,7 +21,7 @@ func _ready():
     animasyon_guncelle()
     animasyon.active = true
 
-func _physics_process(delta) :
+func _physics_process(_delta) :
     input_vector = oyuncu.getir_hareket_vektoru()
     run = oyuncu.getir_kosuyor()
     animasyon_guncelle()

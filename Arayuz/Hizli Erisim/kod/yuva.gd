@@ -1,19 +1,23 @@
 extends Sprite
 class_name Yuva
 
-var adet := 0
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var esya: Esya
 
 onready var etiket = get_node("label_kok/Label")
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
     var label_kok = get_node("label_kok")
     label_kok.z_index = 1
     scale = Genel.DUNYA_OLCEGI
     label_kok.scale.x = 1 / scale.x
     label_kok.scale.y = 1 / scale.y
+    etikete_yaz(0)
+
+func esya_ekle(gelen_esya: Esya):
+    # Bos hucreye esya ekleme fonksiyonu
+    esya = gelen_esya
+    texture = esya.getir_simge()
+    etiketi_guncelle()
 
 func etikete_yaz(sayi :int):
     if sayi <= 1:
@@ -21,11 +25,16 @@ func etikete_yaz(sayi :int):
     else:
         etiket.text = str(sayi)
 
+func etiketi_guncelle():
+    etikete_yaz(esya.adet)
+
 func ekle(sayi:int):
-    adet += sayi
-    etikete_yaz(adet)
+    # Dolu hucredeki esyayı sayi kadar arttırma fonksiyonu
+    esya.adet += sayi
+    etiketi_guncelle()
 
 func sayiyi_ayarla(sayi:int):
+    # Dolu hucreninin sayısını doğrudan ayarlama
     etikete_yaz(sayi)
 
 

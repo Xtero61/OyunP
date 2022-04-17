@@ -31,17 +31,13 @@ enum{
 
 func _ready():
     hizli_erisim.esya_ekle(1,
-        Genel.esya[Genel.ESYA_TAS][Genel.ESYA_SAHNE].instance(),
-        100)
+        Genel.esya[Genel.ESYA_TAS][Genel.ESYA_SAHNE].instance(), 100)
     hizli_erisim.esya_ekle(2,
-        Genel.esya[Genel.ESYA_ODUN][Genel.ESYA_SAHNE].instance(),
-        24)
+        Genel.esya[Genel.ESYA_ODUN][Genel.ESYA_SAHNE].instance(), 20)
     hizli_erisim.esya_ekle(3,
-        Genel.esya[Genel.ESYA_BALTA][Genel.ESYA_SAHNE].instance(),
-        1)
+        Genel.esya[Genel.ESYA_BALTA][Genel.ESYA_SAHNE].instance(), 1)
     hizli_erisim.esya_ekle(4,
-        Genel.esya[Genel.ESYA_KAZMA][Genel.ESYA_SAHNE].instance(),
-        1)
+        Genel.esya[Genel.ESYA_KAZMA][Genel.ESYA_SAHNE].instance(), 1)
 
 func _physics_process(_delta):
     pass
@@ -91,15 +87,22 @@ func attack_Move(): # saldiri animasyonu gericagri(callback) fonk.
     durum = DUR
 
 func el_esya_degistir(yuva):
-    if el_esya != null:
-        remove_child(el_esya)
-    el_esya = hizli_erisim.getir_el_esya(yuva)
-    if el_esya != null:
-        add_child(el_esya)
-        elde_esya_var = true
-    else:
+    var e = hizli_erisim.getir_el_esya(yuva)
+
+    if elde_esya_var:
+        if el_esya.has_method("getir_varlik"):
+            remove_child(el_esya.varlik)
+        else:
+            remove_child(el_esya)
         elde_esya_var = false
 
+    if e != null:
+        el_esya = e
+        if el_esya.has_method("getir_varlik"):
+            add_child(el_esya.varlik)
+        else:
+            add_child(el_esya)
+        elde_esya_var = true
 
 func tuslari_kontrol_et() -> void:
     if Input.is_action_pressed("Saldırı") and elde_esya_var:
@@ -145,16 +148,23 @@ func tuslari_kontrol_et() -> void:
     eski_yuva = secili_yuva
 
     if Input.is_action_just_pressed("esya_at"):
-        hizli_erisim.esya_at(secili_yuva)
-        el_esya_degistir(secili_yuva) # Elde duran aletten de kurtulmak için
+        esya_at(secili_yuva)
+
+func esya_at(yuva_indeks:int):
+    hizli_erisim.esya_at(yuva_indeks)
+    el_esya_degistir(yuva_indeks)
+
 
 func saldirma_durumuna_gec() -> void:
     durum = SALDIR
-    if el_esya.has_method("saldir"):
-        el_esya.saldir()
+    if el_esya.has_method("getir_varlik"):
+        el_esya.getir_varlik().saldir()
 
 func getir_hareket_vektoru() -> Vector2:
     return hareket_vektoru
+
+func ayarla_elde_esya_var(esya_olma_durumu: bool):
+    elde_esya_var = esya_olma_durumu
 
 func getir_kosuyor() -> bool:
     return kosuyor

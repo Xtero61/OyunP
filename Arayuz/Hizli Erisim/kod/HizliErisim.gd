@@ -1,25 +1,15 @@
 extends CanvasLayer
 
-class Yuva_veri:
-    var adet: int
-    var esya: Esya
-    var yuva: Yuva
-
-var hizli_erisim: Array = []
-
+var yuvalar: Array = []
 onready var oyuncu: Oyuncu = get_parent()
 
-var eski_yuva: int = 1
-var yuva: int = 1
+var eski_yuva_indeks: int = 1
+var yuva_indeks: int = 1
 # Called when the node enters the scene tree for the first time.
 func _ready():
-    for i in range(1,10):
-        var yuva_ismi = "yuva" + str(i)
-        var gecici_degisken = Yuva_veri.new()
-        gecici_degisken.yuva = get_node(yuva_ismi)
-        gecici_degisken.adet = 0
-        gecici_degisken.yuva.sayiyi_ayarla(0)
-        hizli_erisim.append(gecici_degisken)
+    # Yuvalari hafizaya kaydet hizli ulasmak için
+    for i in range(1, 10):
+        yuvalar.append(get_node("yuva" + str(i)))
 
     # hizli erişim çubuğunu ekranın altına ayarla
     var hizli_erisim_boyut: Vector2 = $"./hotbar".get_rect().size
@@ -28,58 +18,59 @@ func _ready():
     $".".offset.x += (ekran_boyut.x / 2 - (hizli_erisim_boyut.x * Genel.DUNYA_OLCEGI.x) / 2 )
     $".".offset.y += (ekran_boyut.y - hizli_erisim_boyut.y * Genel.DUNYA_OLCEGI.y)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-    eski_yuva = yuva
-    yuva = oyuncu.getir_secili_yuva()
+    eski_yuva_indeks = yuva_indeks
+    yuva_indeks = oyuncu.getir_secili_yuva()
 
-
-    if(eski_yuva != yuva):
-        eski_yuva = yuva
-        if yuva == 0 :
+    if(eski_yuva_indeks != yuva_indeks):
+        eski_yuva_indeks = yuva_indeks
+        if yuva_indeks == 0 :
             $AnimationPlayer.play("sec 0")
         else :
-            $hotbarSec.position = get_node("yuva" + str(yuva)).position
+            $hotbarSec.position = getir_yuva(yuva_indeks).position
             $AnimationPlayer.play("sec")
 
-func esya_ekle(yuva_sirasi: int, esya, adet: int) -> void:
-    hizli_erisim[yuva_sirasi - 1].adet = adet
-    hizli_erisim[yuva_sirasi - 1].esya = esya
-    hizli_erisim[yuva_sirasi - 1].yuva.texture = esya.getir_simge()
-#    hizli_erisim[yuva_sirasi - 1].etikete_yaz(adet)
-
+func getir_yuva(gelen_yuva_indeks: int):
+    return yuvalar[gelen_yuva_indeks - 1]
 
 func getir_el_esya(yuva_sirasi):
-    if hizli_erisim[yuva_sirasi - 1].adet == 0:
+    var secilen_yuva: Yuva = getir_yuva(yuva_sirasi)
+    if secilen_yuva.esya == null:
         return null
+    return secilen_yuva.esya
 
-    if hizli_erisim[yuva_sirasi - 1].esya.has_method("getir_varlik"):
-        return hizli_erisim[yuva_sirasi - 1].esya.varlik
-    else:
-        return hizli_erisim[yuva_sirasi - 1].esya
-
-func yuva_sayac_ayarla(yuva_sirasi: int, sayi: int) -> void:
-    hizli_erisim[yuva_sirasi - 1].adet = sayi
+func esya_ekle(gelen_yuva_indeks: int, esya: Esya, gelen_adet: int):
+    esya.adet_ayarla(gelen_adet)
+    var y: Yuva = getir_yuva(gelen_yuva_indeks)
+    y.esya_ekle(esya)
 
 func esya_at(yuva_sirasi: int):
-    if hizli_erisim[yuva_sirasi -1].adet == 0:
+    var secilen_yuva: Yuva = getir_yuva(yuva_sirasi)
+    if secilen_yuva.esya == null:
         return
 
     var olusan_esya: Esya
-    if hizli_erisim[yuva_sirasi -1].adet > 1:
-        olusan_esya = hizli_erisim[yuva_sirasi -1].esya.new()
+    if secilen_yuva.esya.adet > 1:
+        olusan_esya = secilen_yuva.esya.yeni_kopya()
     else:
-        olusan_esya = hizli_erisim[yuva_sirasi -1].esya
+        olusan_esya = secilen_yuva.esya
+        if olusan_esya.has_method("getir_varlik"):
+            oyuncu.remove_child(olusan_esya.varlik)
+        else:
+            oyuncu.remove_child(olusan_esya)
+        oyuncu.ayarla_elde_esya_var(false)
+
+    secilen_yuva.esya.adet -= 1
+    secilen_yuva.etiketi_guncelle()
+
+    if secilen_yuva.esya.adet == 0:
+        secilen_yuva.esya = null
+        secilen_yuva.texture = null
 
     olusan_esya.position = oyuncu.position
-    oyuncu.remove_child(olusan_esya)
     Arac.getir_ysort().add_child(olusan_esya)
     var atilma_noktasi: Vector2 = oyuncu.position + oyuncu.getir_hareket_vektoru()
-    print(atilma_noktasi, oyuncu.position)
     olusan_esya.dusme_hareketi_baslat(atilma_noktasi)
     olusan_esya.kuvvet_uygula(oyuncu.getir_hareket_vektoru(), 500)
 
-    hizli_erisim[yuva_sirasi -1].adet -= 1
-    if hizli_erisim[yuva_sirasi -1].adet == 0:
-        hizli_erisim[yuva_sirasi -1].esya = null
-        hizli_erisim[yuva_sirasi -1].yuva.texture = null
+
