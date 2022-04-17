@@ -57,7 +57,7 @@
 1/z_index = 0
 
 [node name="Dunya" type="Node2D"]
-position = Vector2( 198.891, -102.783 )
+position = Vector2( 199.891, -102.783 )
 scale = Vector2( 2, 2 )
 script = ExtResource( 7 )
 

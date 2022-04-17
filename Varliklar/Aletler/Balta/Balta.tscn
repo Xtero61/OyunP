@@ -1,9 +1,10 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Varliklar/Aletler/Eklemeler/alet.gd" type="Script" id=1]
 [ext_resource path="res://Varliklar/Aletler/Ortak Resim/axe_p_att.png" type="Texture" id=2]
 [ext_resource path="res://Varliklar/Aletler/Balta/resim/axeİdRun.png" type="Texture" id=3]
 [ext_resource path="res://Varliklar/Aletler/Ortak Ses/swosh.wav" type="AudioStream" id=4]
+[ext_resource path="res://Varliklar/Aletler/Eklemeler/vurus_alani.gd" type="Script" id=5]
 
 [sub_resource type="Animation" id=1]
 resource_name = "AxeattArka"
@@ -843,6 +844,7 @@ parameters/playback = SubResource( 33 )
 
 [node name="AxeHit" type="Area2D" parent="."]
 rotation = 4.71239
+script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AxeHit"]
 position = Vector2( 10, 0 )
