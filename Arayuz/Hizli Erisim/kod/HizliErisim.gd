@@ -2,6 +2,7 @@ extends CanvasLayer
 
 var yuvalar: Array = []
 onready var oyuncu: Oyuncu = get_parent()
+var fare_ile_secilen_yuva: String = "yuva1"
 
 var eski_yuva_indeks: int = 1
 var yuva_indeks: int = 1
@@ -73,4 +74,5 @@ func esya_at(yuva_sirasi: int):
     olusan_esya.dusme_hareketi_baslat(atilma_noktasi)
     olusan_esya.kuvvet_uygula(oyuncu.getir_hareket_vektoru(), 500)
 
-
+func getir_fare_ile_sec_yuva():
+   return int(fare_ile_secilen_yuva.replace("yuva", ""))

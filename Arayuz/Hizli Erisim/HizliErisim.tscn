@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Fontlar/hizli_erisim_font.tres" type="DynamicFont" id=1]
-[ext_resource path="res://Arayuz/Hizli Erisim/kod/yuva.gd" type="Script" id=2]
 [ext_resource path="res://Arayuz/Hizli Erisim/kod/HizliErisim.gd" type="Script" id=3]
 [ext_resource path="res://Arayuz/Hizli Erisim/resim/hotbar.png" type="Texture" id=4]
 [ext_resource path="res://Kullanilmamis Resim/hotbarSec.png" type="Texture" id=5]
+[ext_resource path="res://Arayuz/Hizli Erisim/yuva.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Animation" id=1]
 resource_name = "sec"
@@ -69,128 +68,28 @@ texture = ExtResource( 5 )
 anims/sec = SubResource( 1 )
 "anims/sec 0" = SubResource( 2 )
 
-[node name="yuva1" type="Sprite" parent="."]
-position = Vector2( 29, 29 )
-script = ExtResource( 2 )
+[node name="yuva1" parent="." instance=ExtResource( 6 )]
 
-[node name="label_kok" type="Node2D" parent="yuva1"]
-
-[node name="Label" type="Label" parent="yuva1/label_kok"]
-margin_left = -21.0
-margin_top = -21.0
-margin_bottom = -7.0
-custom_fonts/font = ExtResource( 1 )
-text = "100"
-align = 1
-
-[node name="yuva2" type="Sprite" parent="."]
+[node name="yuva2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 85, 29 )
-script = ExtResource( 2 )
 
-[node name="label_kok" type="Node2D" parent="yuva2"]
+[node name="yuva3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 142, 29 )
 
-[node name="Label" type="Label" parent="yuva2/label_kok"]
-margin_left = -21.0
-margin_top = -21.0
-margin_bottom = -7.0
-custom_fonts/font = ExtResource( 1 )
-text = "100"
-align = 1
+[node name="yuva4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 198, 29 )
 
-[node name="yuva3" type="Sprite" parent="."]
-position = Vector2( 141, 29 )
-script = ExtResource( 2 )
+[node name="yuva5" parent="." instance=ExtResource( 6 )]
+position = Vector2( 254, 29 )
 
-[node name="label_kok" type="Node2D" parent="yuva3"]
+[node name="yuva6" parent="." instance=ExtResource( 6 )]
+position = Vector2( 310, 29 )
 
-[node name="Label" type="Label" parent="yuva3/label_kok"]
-margin_left = -21.0
-margin_top = -21.0
-margin_bottom = -7.0
-custom_fonts/font = ExtResource( 1 )
-text = "100"
-align = 1
+[node name="yuva7" parent="." instance=ExtResource( 6 )]
+position = Vector2( 366, 29 )
 
-[node name="yuva4" type="Sprite" parent="."]
-position = Vector2( 197, 29 )
-script = ExtResource( 2 )
+[node name="yuva8" parent="." instance=ExtResource( 6 )]
+position = Vector2( 422, 29 )
 
-[node name="label_kok" type="Node2D" parent="yuva4"]
-
-[node name="Label" type="Label" parent="yuva4/label_kok"]
-margin_left = -21.0
-margin_top = -21.0
-margin_bottom = -7.0
-custom_fonts/font = ExtResource( 1 )
-text = "100"
-align = 1
-
-[node name="yuva5" type="Sprite" parent="."]
-position = Vector2( 253, 29 )
-script = ExtResource( 2 )
-
-[node name="label_kok" type="Node2D" parent="yuva5"]
-
-[node name="Label" type="Label" parent="yuva5/label_kok"]
-margin_left = -21.0
-margin_top = -21.0
-margin_bottom = -7.0
-custom_fonts/font = ExtResource( 1 )
-text = "100"
-align = 1
-
-[node name="yuva6" type="Sprite" parent="."]
-position = Vector2( 309, 29 )
-script = ExtResource( 2 )
-
-[node name="label_kok" type="Node2D" parent="yuva6"]
-
-[node name="Label" type="Label" parent="yuva6/label_kok"]
-margin_left = -21.0
-margin_top = -21.0
-margin_bottom = -7.0
-custom_fonts/font = ExtResource( 1 )
-text = "100"
-align = 1
-
-[node name="yuva7" type="Sprite" parent="."]
-position = Vector2( 365, 29 )
-script = ExtResource( 2 )
-
-[node name="label_kok" type="Node2D" parent="yuva7"]
-
-[node name="Label" type="Label" parent="yuva7/label_kok"]
-margin_left = -21.0
-margin_top = -21.0
-margin_bottom = -7.0
-custom_fonts/font = ExtResource( 1 )
-text = "100"
-align = 1
-
-[node name="yuva8" type="Sprite" parent="."]
-position = Vector2( 421, 29 )
-script = ExtResource( 2 )
-
-[node name="label_kok" type="Node2D" parent="yuva8"]
-
-[node name="Label" type="Label" parent="yuva8/label_kok"]
-margin_left = -21.0
-margin_top = -21.0
-margin_bottom = -7.0
-custom_fonts/font = ExtResource( 1 )
-text = "100"
-align = 1
-
-[node name="yuva9" type="Sprite" parent="."]
-position = Vector2( 477, 29 )
-script = ExtResource( 2 )
-
-[node name="label_kok" type="Node2D" parent="yuva9"]
-
-[node name="Label" type="Label" parent="yuva9/label_kok"]
-margin_left = -21.0
-margin_top = -21.0
-margin_bottom = -7.0
-custom_fonts/font = ExtResource( 1 )
-text = "100"
-align = 1
+[node name="yuva9" parent="." instance=ExtResource( 6 )]
+position = Vector2( 478, 29 )

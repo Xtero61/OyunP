@@ -4,6 +4,7 @@ class_name Yuva
 var esya: Esya
 
 onready var etiket = get_node("label_kok/Label")
+onready var hizli_erisim = get_parent()
 
 func _ready():
     var label_kok = get_node("label_kok")
@@ -37,7 +38,8 @@ func sayiyi_ayarla(sayi:int):
     # Dolu hucreninin sayısını doğrudan ayarlama
     etikete_yaz(sayi)
 
+func hizli_erisim_bilgilendir():
+    hizli_erisim.fare_ile_secilen_yuva = name
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _on_Area2D_mouse_entered() -> void:
+    hizli_erisim_bilgilendir()

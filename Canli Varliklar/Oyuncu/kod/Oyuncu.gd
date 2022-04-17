@@ -143,6 +143,14 @@ func tuslari_kontrol_et() -> void:
     elif Input.is_action_just_pressed("he_9"):
         secili_yuva = 9
 
+    secili_yuva += int(Input.is_action_just_released("fare_tekerlek_asagi")) - int(Input.is_action_just_released("fare_tekerlek_yukari"))
+    # Gereksiz optimizasyon kodu
+    # secili_yuva = int(secili_yuva > 9) * 1 + int(secili_yuva < 1) * 9 + secili_yuva * int(secili_yuva >= 1) * int(secili_yuva <= 9)
+    if secili_yuva > 9:
+        secili_yuva = 1
+    elif secili_yuva < 1:
+        secili_yuva = 9
+
     if secili_yuva != eski_yuva:
         el_esya_degistir(secili_yuva)
     eski_yuva = secili_yuva
