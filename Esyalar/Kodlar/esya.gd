@@ -1,6 +1,7 @@
 extends RigidBody2D
 class_name Esya
 
+var id: int
 var esya_sahne
 var adet: int = 1
 
@@ -31,3 +32,6 @@ func yeni_kopya():
 
 func adet_ayarla(gelen_adet: int):
     adet = gelen_adet
+
+func getir_id():
+    return id

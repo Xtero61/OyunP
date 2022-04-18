@@ -39,6 +39,7 @@ func _ready():
     hizli_erisim.esya_ekle(4,
         Genel.esya[Genel.ESYA_KAZMA][Genel.ESYA_SAHNE].instance(), 1)
 
+
 func _physics_process(_delta):
     pass
 

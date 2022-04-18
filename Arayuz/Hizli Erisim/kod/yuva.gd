@@ -40,6 +40,3 @@ func sayiyi_ayarla(sayi:int):
 
 func hizli_erisim_bilgilendir():
     hizli_erisim.fare_ile_secilen_yuva = name
-
-func _on_Area2D_mouse_entered() -> void:
-    hizli_erisim_bilgilendir()
