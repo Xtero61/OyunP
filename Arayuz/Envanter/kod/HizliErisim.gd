@@ -38,7 +38,7 @@ func getir_yuva(gelen_yuva_indeks: int):
 
 func getir_el_esya(yuva_sirasi):
     var secilen_yuva: Yuva = getir_yuva(yuva_sirasi)
-    if secilen_yuva.esya == null:
+    if not secilen_yuva.dolu:
         return null
     return secilen_yuva.esya
 
@@ -64,31 +64,41 @@ func esya_ekle(esya: Esya, gelen_adet: int):
 
 func esya_at(yuva_sirasi: int):
     var secilen_yuva: Yuva = getir_yuva(yuva_sirasi)
-    if secilen_yuva.esya == null:
+    # Yuva boş ise hiçbir şey yapma
+    if not secilen_yuva.dolu:
         return
 
     var olusan_esya: Esya
     if secilen_yuva.esya.adet > 1:
+        # Yuvada birden fazla eşya var ise yuvadaki esyanin kopyasini sec
         olusan_esya = secilen_yuva.esya.yeni_kopya()
     else:
+        # Esyanin gercegini sec
         olusan_esya = secilen_yuva.esya
-        if olusan_esya.has_method("getir_varlik"):
-            oyuncu.remove_child(olusan_esya.varlik)
-        else:
-            oyuncu.remove_child(olusan_esya)
-        oyuncu.ayarla_elde_esya_var(false)
 
+    # Secilen esyayi kaldir
+    if olusan_esya.has_method("getir_varlik"):
+        oyuncu.remove_child(olusan_esya.varlik)
+    else:
+        oyuncu.remove_child(olusan_esya)
+
+    # Esya adet azalt
     secilen_yuva.esya.adet -= 1
     secilen_yuva.etiketi_guncelle()
 
     if secilen_yuva.esya.adet == 0:
+        oyuncu.ayarla_elde_esya_var(false)
         secilen_yuva.dolu = false
         secilen_yuva.esya = null
         secilen_yuva.texture = null
 
+    # Atilacak esyayi hazirla ve at
     olusan_esya.position = oyuncu.position
+    olusan_esya.yerde = true
+    olusan_esya.adet = 1
     Arac.getir_ysort().add_child(olusan_esya)
-    var atilma_noktasi: Vector2 = oyuncu.position + oyuncu.getir_hareket_vektoru()
+    var atilma_noktasi: Vector2
+    atilma_noktasi = oyuncu.position + oyuncu.getir_hareket_vektoru()
     olusan_esya.dusme_hareketi_baslat(atilma_noktasi)
     olusan_esya.kuvvet_uygula(oyuncu.getir_hareket_vektoru(), 500)
 

@@ -19,9 +19,9 @@ func dusme_hareketi_baslat(dusme_yeri: Vector2):
     $CollisionShape2D.disabled = false
 
 func envantere_girme_baslat():
+    mode = MODE_STATIC
     yerde = false
     $CollisionShape2D.disabled = true
-    mode = MODE_STATIC
     position = Vector2.ZERO
     rotation = 0
 

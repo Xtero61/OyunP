@@ -190,6 +190,7 @@ func _on_Esya_Alma_body_entered(esya):
     if esya.tip == "esya":
         Arac.getir_ysort().remove_child(esya)
         hizli_erisim.esya_ekle(esya, esya.adet)
+        el_esya_degistir(secili_yuva)
 
 func _on_Esya_cekme_body_entered(esya):
     if esya.tip ==  "esya":
