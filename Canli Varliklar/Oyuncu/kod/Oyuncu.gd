@@ -95,9 +95,11 @@ func el_esya_degistir(yuva):
     if e != null:
         el_esya = e
         if el_esya.has_method("getir_varlik"):
-            add_child(el_esya.varlik)
+            call_deferred("add_child", el_esya.varlik)
+            # add_child(el_esya.varlik)
         else:
-            add_child(el_esya)
+            call_deferred("add_child", el_esya)
+            # add_child(el_esya)
         elde_esya_var = true
 
 func tuslari_kontrol_et() -> void:
