@@ -2,6 +2,7 @@ extends Sprite
 class_name Yuva
 
 var esya: Esya
+var dolu: bool = false # Yuva dolu mu
 
 onready var etiket = get_node("label_kok/Label")
 onready var hizli_erisim = get_parent()
@@ -16,9 +17,15 @@ func _ready():
 
 func esya_ekle(gelen_esya: Esya):
     # Bos hucreye esya ekleme fonksiyonu
-    esya = gelen_esya
-    texture = esya.getir_simge()
-    etiketi_guncelle()
+    if not dolu:
+        esya = gelen_esya
+        dolu = true
+        texture = esya.getir_simge()
+        etiketi_guncelle()
+    else:
+        esya.adet += gelen_esya.adet
+        gelen_esya.nesne_sil()
+        etiketi_guncelle()
 
 func etikete_yaz(sayi :int):
     if sayi <= 1:

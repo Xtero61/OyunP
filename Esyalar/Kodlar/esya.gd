@@ -1,21 +1,29 @@
 extends RigidBody2D
 class_name Esya
 
-const tip: String = "esya" 
+const tip: String = "esya"
 var id: int
 var esya_sahne
 var adet: int = 1
+var yerde: bool = true
 
 func _ready() -> void:
-    $CollisionShape2D.disabled = true
-    mode = MODE_STATIC
+    dusme_hareketi_baslat(position)
 
 func dusme_hareketi_baslat(dusme_yeri: Vector2):
+    yerde = true
     position = dusme_yeri
     mode = MODE_RIGID
     $simge.scale = Genel.DUNYA_OLCEGI
     $CollisionShape2D.scale = Genel.DUNYA_OLCEGI
     $CollisionShape2D.disabled = false
+
+func envantere_girme_baslat():
+    yerde = false
+    $CollisionShape2D.disabled = true
+    mode = MODE_STATIC
+    position = Vector2.ZERO
+    rotation = 0
 
 func kuvvet_uygula(yon: Vector2, kuvvet: int):
     apply_central_impulse(yon * kuvvet)
@@ -36,3 +44,6 @@ func adet_ayarla(gelen_adet: int):
 
 func getir_id():
     return id
+
+func nesne_sil():
+    queue_free()

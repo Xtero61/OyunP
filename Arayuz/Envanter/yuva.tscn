@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Fontlar/hizli_erisim_font.tres" type="DynamicFont" id=1]
-[ext_resource path="res://Arayuz/Hizli Erisim/kod/yuva.gd" type="Script" id=2]
+[ext_resource path="res://Arayuz/Envanter/kod/yuva.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 11.4018

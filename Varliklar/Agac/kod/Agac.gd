@@ -2,7 +2,7 @@ extends StaticBody2D
 
 const yikilmaSayi: int = 15
 const tip: String = "varlik"
- 
+
 onready var animasyon_agaci: AnimationTree = $AnimationTree
 onready var animasyon_oynatici: AnimationPlayer = $AnimationPlayer
 onready var animasyon_durumu = animasyon_agaci.get("parameters/playback")
