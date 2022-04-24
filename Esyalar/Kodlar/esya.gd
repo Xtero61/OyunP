@@ -1,6 +1,7 @@
 extends RigidBody2D
 class_name Esya
 
+const tip: String = "esya" 
 var id: int
 var esya_sahne
 var adet: int = 1

@@ -1,6 +1,7 @@
 extends KinematicBody2D
 class_name Oyuncu
 
+const tip: String = "canli"
 const HIZLANMA = 700
 const MAKS_HIZ = 120
 const SURTUNME = 500
@@ -16,6 +17,8 @@ var maks_mesafe : int = 12
 var secili_yuva : int = 1
 var eski_yuva : int = 0
 
+onready var esya_cekme = $Esya_cekme/CollisionShape2D
+onready var esya_al = $Esya_Alma/CollisionShape2D
 onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
@@ -30,10 +33,10 @@ enum{
 }
 
 func _ready():
-    hizli_erisim.esya_ekle(1,
-        Genel.esya[Genel.ESYA_TAS][Genel.ESYA_SAHNE].instance(), 100)
-    hizli_erisim.esya_ekle(2,
-        Genel.esya[Genel.ESYA_ODUN][Genel.ESYA_SAHNE].instance(), 20)
+#    hizli_erisim.esya_ekle(1,
+#        Genel.esya[Genel.ESYA_TAS][Genel.ESYA_SAHNE].instance(), 100)
+#    hizli_erisim.esya_ekle(2,
+#        Genel.esya[Genel.ESYA_ODUN][Genel.ESYA_SAHNE].instance(), 20)
     hizli_erisim.esya_ekle(3,
         Genel.esya[Genel.ESYA_BALTA][Genel.ESYA_SAHNE].instance(), 1)
     hizli_erisim.esya_ekle(4,
@@ -158,6 +161,13 @@ func tuslari_kontrol_et() -> void:
 
     if Input.is_action_just_pressed("esya_at"):
         esya_at(secili_yuva)
+    
+    if Input.is_action_pressed("esya_al"):
+        esya_al.disabled = false
+        esya_cekme.disabled = false     
+    else :
+        esya_al.disabled = true
+        esya_cekme.disabled = true
 
 func esya_at(yuva_indeks:int):
     hizli_erisim.esya_at(yuva_indeks)
@@ -183,3 +193,15 @@ func getir_secili_yuva() -> int:
 
 func nesne_sil() -> void:
     queue_free()
+
+func _on_Esya_Alma_body_entered(esya):    
+    if esya.tip == "esya": 
+        Arac.getir_ysort().remove_child(esya)
+        hizli_erisim.esya_ekle(1,esya, esya.adet)
+
+func _on_Esya_cekme_body_entered(esya):
+    if esya.tip ==  "esya":
+        var adam_yer = $".".position
+        var esya_yer = esya.position
+        var yon = esya_yer.direction_to(adam_yer)
+        esya.apply_impulse(esya_yer,yon)

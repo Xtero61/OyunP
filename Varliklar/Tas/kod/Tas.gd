@@ -1,9 +1,13 @@
 extends Node2D
 
+const tip: String = "varlik"
+const yikilmaSayi: int = 15
+
 onready var animationPlayer = $AnimationPlayer
-export var vurulmaSayi = 0
-var yikilmaSayi = 15
-var Sayi = 1
+
+export var vurulmaSayi: int = 0
+
+var Sayi: int = 1
 
 func _process(_delta):
     if vurulmaSayi == Sayi :

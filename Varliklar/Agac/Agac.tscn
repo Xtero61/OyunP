@@ -5,172 +5,177 @@
 [ext_resource path="res://Varliklar/Agac/ses/AgacVurulma.wav" type="AudioStream" id=3]
 [ext_resource path="res://Gölge.png" type="Texture" id=4]
 
+[sub_resource type="CapsuleShape2D" id=17]
+custom_solver_bias = 1.0
+radius = 4.40686
+height = 8.0148
+
 [sub_resource type="Animation" id=1]
 length = 1.5
 step = 0.01
-tracks/0/type = "value"
-tracks/0/path = NodePath("ağaç1:rotation_degrees")
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
+"times": PoolRealArray( 1.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_Kesildim"
+} ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AgacAlan/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.01, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.01, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ağaç1:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
 "times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 0.9, 1 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ 0.0, 10.0, 20.0, 38.0, 90.0, 85.0, 90.0 ]
 }
-tracks/1/type = "value"
-tracks/1/path = NodePath("ağaç1:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, -27.4076 ), Vector2( 10.232, -29.635 ), Vector2( 16.359, -29.635 ), Vector2( 25.941, -20.403 ), Vector2( 40.859, -5.135 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("ağaç1:self_modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 1.3, 1.5 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0.98063 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
-}
-tracks/3/type = "method"
-tracks/3/path = NodePath(".")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 1.5 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "_Kesildim"
-} ]
-}
 tracks/4/type = "value"
-tracks/4/path = NodePath("Gölge:position")
+tracks/4/path = NodePath("ağaç1:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 0.6, 0.8 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 1.5 ), Vector2( 32, 1.5 ), Vector2( 46, 1.5 ) ]
+"values": [ Vector2( 0, -27.408 ), Vector2( 10.232, -29.635 ), Vector2( 16.359, -29.635 ), Vector2( 25.941, -20.403 ), Vector2( 40.859, -5.135 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Gölge:scale")
+tracks/5/path = NodePath("ağaç1:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0, 0.6, 0.8 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1.25992, 0.59375 ), Vector2( 1.5, 0.594 ), Vector2( 1.5, 0.8 ) ]
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("Gölge:self_modulate")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
 "times": PoolRealArray( 0, 1.3, 1.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
+tracks/6/type = "value"
+tracks/6/path = NodePath("Gölge:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 1.5 ), Vector2( 32, 1.5 ), Vector2( 46, 1.5 ) ]
+}
 tracks/7/type = "value"
-tracks/7/path = NodePath("StaticBody2D/CollisionShape2D:disabled")
+tracks/7/path = NodePath("Gölge:scale")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0, 0.01, 1.5 ),
+"times": PoolRealArray( 0, 0.6, 0.8 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ false, true, true ]
+"update": 0,
+"values": [ Vector2( 1.25992, 0.59375 ), Vector2( 1.5, 0.594 ), Vector2( 1.5, 0.8 ) ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("AgacAlan/CollisionShape2D:disabled")
+tracks/8/path = NodePath("Gölge:modulate")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
-"times": PoolRealArray( 0, 0.01, 1.5 ),
+"times": PoolRealArray( 0, 1.3, 1.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ false, true, true ]
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
 [sub_resource type="Animation" id=2]
 length = 1.5
 step = 0.01
-tracks/0/type = "value"
-tracks/0/path = NodePath("ağaç1:rotation_degrees")
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 0.9, 1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ 0.0, -10.0, -20.0, -38.0, -90.0, -85.0, -90.0 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("ağaç1:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, -27.4076 ), Vector2( -10.227, -29.635 ), Vector2( -16.359, -29.635 ), Vector2( -25.941, -25.403 ), Vector2( -40.859, -5.135 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("ağaç1:self_modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 1.3, 1.5 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0.98063 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
-}
-tracks/3/type = "method"
-tracks/3/path = NodePath(".")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
 "times": PoolRealArray( 1.5 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
 "method": "_Kesildim"
 } ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ağaç1:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -10.0, -20.0, -38.0, -90.0, -85.0, -90.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ağaç1:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -27.408 ), Vector2( -10.227, -29.635 ), Vector2( -16.359, -29.635 ), Vector2( -25.941, -25.403 ), Vector2( -40.859, -5.135 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ağaç1:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1.31, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("Gölge:position")
@@ -194,10 +199,10 @@ tracks/5/keys = {
 "times": PoolRealArray( 0, 0.6, 0.8 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1.25992, 0.59375 ), Vector2( 1.5, 0.59375 ), Vector2( 1.562, 0.8 ) ]
+"values": [ Vector2( 1.25992, 0.59375 ), Vector2( 1.5, 0.594 ), Vector2( 1.562, 0.8 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Gölge:self_modulate")
+tracks/6/path = NodePath("Gölge:modulate")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -209,7 +214,7 @@ tracks/6/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("AgacAlan/CollisionShape2D:disabled")
+tracks/7/path = NodePath("CollisionShape2D:disabled")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -217,11 +222,11 @@ tracks/7/enabled = true
 tracks/7/keys = {
 "times": PoolRealArray( 0, 0.01, 1.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
+"update": 1,
 "values": [ false, true, true ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("StaticBody2D/CollisionShape2D:disabled")
+tracks/8/path = NodePath("AgacAlan/CollisionShape2D:disabled")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -258,7 +263,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, -27.4076 ), Vector2( 2, -27.408 ), Vector2( 0, -27.408 ), Vector2( -2, -27.408 ), Vector2( 0, -27.408 ) ]
+"values": [ Vector2( 0, -27.408 ), Vector2( 2, -27.408 ), Vector2( 0, -27.408 ), Vector2( -2, -27.408 ), Vector2( 0, -27.408 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Gölge:position")
@@ -273,66 +278,65 @@ tracks/2/keys = {
 "values": [ Vector2( 0, 1.5 ), Vector2( 2, 1.5 ), Vector2( 0, 1.5 ), Vector2( -2, 1.5 ), Vector2( 0, 1.5 ) ]
 }
 
-[sub_resource type="AnimationNodeBlendSpace1D" id=21]
+[sub_resource type="AnimationNodeBlendSpace1D" id=4]
 
-[sub_resource type="AnimationNodeAnimation" id=11]
+[sub_resource type="AnimationNodeAnimation" id=5]
 animation = "KesilmeSağ"
 
-[sub_resource type="AnimationNodeAnimation" id=12]
+[sub_resource type="AnimationNodeAnimation" id=6]
 animation = "KesilmeSol"
 
-[sub_resource type="AnimationNodeAnimation" id=13]
+[sub_resource type="AnimationNodeAnimation" id=7]
 animation = "KesilmeSağ"
 
-[sub_resource type="AnimationNodeAnimation" id=14]
+[sub_resource type="AnimationNodeAnimation" id=8]
 animation = "KesilmeSol"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id=15]
-blend_point_0/node = SubResource( 11 )
+[sub_resource type="AnimationNodeBlendSpace2D" id=9]
+blend_point_0/node = SubResource( 5 )
 blend_point_0/pos = Vector2( 1, 0 )
-blend_point_1/node = SubResource( 12 )
+blend_point_1/node = SubResource( 6 )
 blend_point_1/pos = Vector2( -1, 0 )
-blend_point_2/node = SubResource( 13 )
+blend_point_2/node = SubResource( 7 )
 blend_point_2/pos = Vector2( 0, 1 )
-blend_point_3/node = SubResource( 14 )
+blend_point_3/node = SubResource( 8 )
 blend_point_3/pos = Vector2( 0, -1 )
 blend_mode = 1
 
-[sub_resource type="AnimationNodeAnimation" id=16]
+[sub_resource type="AnimationNodeAnimation" id=10]
 animation = "Vurulma"
 
-[sub_resource type="AnimationNodeBlendSpace1D" id=17]
-blend_point_0/node = SubResource( 16 )
+[sub_resource type="AnimationNodeBlendSpace1D" id=11]
+blend_point_0/node = SubResource( 10 )
 blend_point_0/pos = 0.0
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=22]
+[sub_resource type="AnimationNodeStateMachineTransition" id=12]
 switch_mode = 2
 auto_advance = true
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=23]
+[sub_resource type="AnimationNodeStateMachineTransition" id=13]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=24]
+[sub_resource type="AnimationNodeStateMachineTransition" id=14]
 
-[sub_resource type="AnimationNodeStateMachine" id=19]
-states/Durma/node = SubResource( 21 )
+[sub_resource type="AnimationNodeStateMachine" id=15]
+states/Durma/node = SubResource( 4 )
 states/Durma/position = Vector2( 239.889, -9.68056 )
-states/Kesildim/node = SubResource( 15 )
+states/Kesildim/node = SubResource( 9 )
 states/Kesildim/position = Vector2( 424.667, -9.68056 )
-states/Vurma/node = SubResource( 17 )
+states/Vurma/node = SubResource( 11 )
 states/Vurma/position = Vector2( 240.333, 84.7778 )
-transitions = [ "Vurma", "Durma", SubResource( 22 ), "Durma", "Vurma", SubResource( 23 ), "Durma", "Kesildim", SubResource( 24 ) ]
+transitions = [ "Vurma", "Durma", SubResource( 12 ), "Durma", "Vurma", SubResource( 13 ), "Durma", "Kesildim", SubResource( 14 ) ]
 start_node = "Durma"
 graph_offset = Vector2( 0, -83.4265 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=20]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=16]
 
-[sub_resource type="CapsuleShape2D" id=10]
-custom_solver_bias = 1.0
-radius = 4.40686
-height = 8.0148
-
-[node name="Agac" type="Node2D"]
+[node name="Agac" type="StaticBody2D"]
 script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource( 17 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
@@ -363,24 +367,18 @@ anims/Vurulma = SubResource( 3 )
 blend_times = [ "Vurulma", "KesilmeSağ", 1.0, "Vurulma", "KesilmeSol", 1.0 ]
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 19 )
+tree_root = SubResource( 15 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 20 )
+parameters/playback = SubResource( 16 )
 parameters/Durma/blend_position = 0
 parameters/Kesildim/blend_position = -0.0022676
 parameters/Vurma/blend_position = Vector2( 0, 0 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-rotation = 1.5708
-shape = SubResource( 10 )
 
 [node name="AgacAlan" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AgacAlan"]
 rotation = 1.5708
-shape = SubResource( 10 )
+shape = SubResource( 17 )
 
 [connection signal="area_entered" from="AgacAlan" to="." method="_on_AgacAlan_area_entered"]

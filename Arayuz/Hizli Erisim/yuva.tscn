@@ -4,7 +4,7 @@
 [ext_resource path="res://Arayuz/Hizli Erisim/kod/yuva.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 27.0
+radius = 11.4018
 
 [node name="yuva" type="Sprite"]
 position = Vector2( 29, 29 )
