@@ -69,9 +69,11 @@ func esya_at(yuva_sirasi: int):
         return
 
     var olusan_esya: Esya
+    var kopya: bool = false
     if secilen_yuva.esya.adet > 1:
         # Yuvada birden fazla eşya var ise yuvadaki esyanin kopyasini sec
         olusan_esya = secilen_yuva.esya.yeni_kopya()
+        kopya = true
     else:
         # Esyanin gercegini sec
         olusan_esya = secilen_yuva.esya
@@ -80,7 +82,8 @@ func esya_at(yuva_sirasi: int):
     if olusan_esya.has_method("getir_varlik"):
         oyuncu.remove_child(olusan_esya.varlik)
     else:
-        oyuncu.remove_child(olusan_esya)
+        if not kopya:
+            oyuncu.remove_child(olusan_esya)
 
     # Esya adet azalt
     secilen_yuva.esya.adet -= 1
