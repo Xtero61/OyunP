@@ -43,14 +43,15 @@ func getir_el_esya(yuva_sirasi):
     return secilen_yuva.esya
 
 func esya_ekle_yuva_belirle(esya: Esya):
-    for y1 in yuvalar:
-        if y1.dolu:
-            if y1.esya.id == esya.id:
-                return y1
+    var bos_yuvalar = []
+    for y in yuvalar:
+        if y.dolu:
+            if y.esya.id == esya.id:
+                return y
+        else:
+            bos_yuvalar.append(y)
 
-    for y2 in yuvalar:
-        if not y2.dolu:
-            return y2
+    return bos_yuvalar[0]
 
 func esya_ekle(esya: Esya, gelen_adet: int):
     if esya.yerde:
@@ -63,7 +64,6 @@ func esya_ekle(esya: Esya, gelen_adet: int):
 
 func esya_at(yuva_sirasi: int):
     var secilen_yuva: Yuva = getir_yuva(yuva_sirasi)
-    secilen_yuva.dolu = false
     if secilen_yuva.esya == null:
         return
 
@@ -82,6 +82,7 @@ func esya_at(yuva_sirasi: int):
     secilen_yuva.etiketi_guncelle()
 
     if secilen_yuva.esya.adet == 0:
+        secilen_yuva.dolu = false
         secilen_yuva.esya = null
         secilen_yuva.texture = null
 
