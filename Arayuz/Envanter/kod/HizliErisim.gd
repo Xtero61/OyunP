@@ -46,7 +46,7 @@ func esya_ekle_yuva_belirle(esya: Esya):
     var bos_yuvalar = []
     for y in yuvalar:
         if y.dolu:
-            if y.esya.id == esya.id:
+            if y.esya.id == esya.id and y.esya.adet < Genel.esya[y.esya.id][Genel.ESYA_MAKS_YIGIN_ADET]:
                 return y
         else:
             bos_yuvalar.append(y)
@@ -99,10 +99,16 @@ func esya_at(yuva_sirasi: int):
     olusan_esya.position = oyuncu.position
     olusan_esya.yerde = true
     olusan_esya.adet = 1
-    Arac.getir_ysort().add_child(olusan_esya)
     var atilma_noktasi: Vector2
     atilma_noktasi = oyuncu.position + oyuncu.getir_hareket_vektoru()
-    olusan_esya.dusme_hareketi_baslat(atilma_noktasi)
+    olusan_esya.position = atilma_noktasi
+    # esyanin yerinin atılma noktasi ayarladigimiz icin
+    # _ready fonksiyonunda bulunana dusme_hareketi_baslat fonk dogru
+    # bir sekilde baslayacak eger kopya degilse cagiracagiz
+    if not kopya:
+        olusan_esya.dusme_hareketi_baslat(atilma_noktasi)
+        
+    Arac.getir_ysort().add_child(olusan_esya)
     olusan_esya.kuvvet_uygula(oyuncu.getir_hareket_vektoru(), 500)
 
 func getir_fare_ile_sec_yuva():
