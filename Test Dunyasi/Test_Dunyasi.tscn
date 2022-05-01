@@ -73,9 +73,16 @@ tile_data = PoolIntArray( -2424881, 1, 0, -2424880, 1, 0, -2424879, 1, 0, -24248
 [node name="Yeryuzu" type="YSort" parent="."]
 
 [node name="esya_kazma" parent="Yeryuzu" instance=ExtResource( 8 )]
+position = Vector2( -46.9455, -0.608501 )
+
+[node name="esya_kazma2" parent="Yeryuzu" instance=ExtResource( 8 )]
+position = Vector2( -78.9455, -4.6085 )
 
 [node name="esya_balta" parent="Yeryuzu" instance=ExtResource( 9 )]
 position = Vector2( 20.1815, -13.4543 )
+
+[node name="esya_balta2" parent="Yeryuzu" instance=ExtResource( 9 )]
+position = Vector2( -6.9455, -24.6085 )
 
 [node name="TasToplSimge" type="Sprite" parent="Yeryuzu"]
 position = Vector2( 104, 256 )
