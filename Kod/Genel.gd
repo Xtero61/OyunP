@@ -2,7 +2,8 @@ extends Node2D
 # Genel değsişken tanımlamaları
 
 const ESYA_DUSME_RASTGELE_KUVVET : int = 500
-const ESYA_DUSME_MAKS_DONUS_KUVVETI = 5000
+const ESYA_DUSME_MAKS_DONUS_KUVVETI: int = 1000
+const MAKS_OYUNCU_FIRLATMA_KUVVETI: int = 500
 const OYUNCU_YOLU: String = "/root/Dunya/Yeryuzu/Oyuncu"
 const YERYUZU_YOLU: String = "/root/Dunya/Yeryuzu"
 const DUNYA_OLCEGI: Vector2 = Vector2(2, 2)

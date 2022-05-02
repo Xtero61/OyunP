@@ -73,6 +73,7 @@ func esya_at(yuva_sirasi: int):
     if secilen_yuva.esya.adet > 1:
         # Yuvada birden fazla eşya var ise yuvadaki esyanin kopyasini sec
         olusan_esya = secilen_yuva.esya.yeni_kopya()
+        yield(VisualServer, "frame_post_draw")
         kopya = true
     else:
         # Esyanin gercegini sec
@@ -109,7 +110,7 @@ func esya_at(yuva_sirasi: int):
         olusan_esya.dusme_hareketi_baslat(atilma_noktasi)
         
     Arac.getir_ysort().add_child(olusan_esya)
-    olusan_esya.kuvvet_uygula(oyuncu.getir_hareket_vektoru(), 500)
+    olusan_esya.kuvvet_uygula(oyuncu.getir_hareket_vektoru(), Genel.MAKS_OYUNCU_FIRLATMA_KUVVETI)
 
 func getir_fare_ile_sec_yuva():
    return int(fare_ile_secilen_yuva.replace("yuva", ""))

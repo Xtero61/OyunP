@@ -11,9 +11,10 @@ func _ready() -> void:
     dusme_hareketi_baslat(position)
 
 func dusme_hareketi_baslat(dusme_yeri: Vector2):
+    mode = MODE_RIGID
+    yield(VisualServer, "frame_post_draw")
     yerde = true
     position = dusme_yeri
-    mode = MODE_RIGID
     $simge.scale = Genel.DUNYA_OLCEGI
     $CollisionShape2D.scale = Genel.DUNYA_OLCEGI
     $CollisionShape2D.disabled = false
@@ -26,7 +27,15 @@ func envantere_girme_baslat():
     rotation = 0
 
 func kuvvet_uygula(yon: Vector2, kuvvet: int):
+    yield(VisualServer, "frame_post_draw")
     apply_central_impulse(yon * kuvvet)
+    var tork = Arac.rastgele_yuzdeyle_sinirla(Genel.ESYA_DUSME_MAKS_DONUS_KUVVETI, 
+                                              80, 
+                                              100)
+    if Arac.getir_yuzde_sans(50):
+        tork *= -1
+                   
+    apply_torque_impulse(tork)
 
 func rastgele_kuvvet_uygula():
     var randx = (randi() % 3 - 1)
@@ -37,7 +46,8 @@ func getir_simge():
     return get_node("simge").texture
 
 func yeni_kopya():
-    return esya_sahne.instance()
+    var esya = esya_sahne.instance()
+    return esya
 
 func adet_ayarla(gelen_adet: int):
     adet = gelen_adet
