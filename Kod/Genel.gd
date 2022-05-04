@@ -14,6 +14,7 @@ enum{
     ESYA_KAZMA,
     ESYA_ODUN,
     ESYA_TAS,
+    ESYA_BUGDAY,
 }
 
 enum{
@@ -38,10 +39,11 @@ enum{
 # Esya yüklemeleri
 const esya = [
     # ESYA_ID     , MAKS_DUSME, MAKS_YIGIN_ADET  , ESYA_SAHNE                               
-    [ ESYA_BALTA  , 1         , 1                , preload("res://Esyalar/Balta/Balta.tscn")],
-    [ ESYA_KAZMA  , 1         , 1                , preload("res://Esyalar/Kazma/Kazma.tscn")],
-    [ ESYA_ODUN   , 4         , 99               , preload("res://Esyalar/Odun/Odun.tscn")  ],
-    [ ESYA_TAS    , 4         , 99               , preload("res://Esyalar/Tas/Tas.tscn")    ],
+    [ ESYA_BALTA  , 1         , 1                , preload("res://Esyalar/Balta/Balta.tscn")  ],
+    [ ESYA_KAZMA  , 1         , 1                , preload("res://Esyalar/Kazma/Kazma.tscn")  ],
+    [ ESYA_ODUN   , 4         , 99               , preload("res://Esyalar/Odun/Odun.tscn")    ],
+    [ ESYA_TAS    , 4         , 99               , preload("res://Esyalar/Tas/Tas.tscn")      ],
+    [ ESYA_BUGDAY , 4         , 99               , preload("res://Esyalar/Bugday/Bugday.tscn")],
 ]
 
 # Varlik yuklemeleri

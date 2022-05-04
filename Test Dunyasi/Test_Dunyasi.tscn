@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Canli Varliklar/Oyuncu/Oyuncu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://dunyaR.tres" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Test Dunyasi/YSort.gd" type="Script" id=7]
 [ext_resource path="res://Esyalar/Kazma/Kazma.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Esyalar/Balta/Balta.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Esyalar/Bugday/Bugday.tscn" type="PackedScene" id=10]
 
 [sub_resource type="TileSet" id=1]
 0/name = "dunyaR.tres 0"
@@ -161,3 +162,7 @@ position = Vector2( 292.302, 312.849 )
 
 [node name="KampAteşi" parent="Yeryuzu" instance=ExtResource( 3 )]
 position = Vector2( 126.056, 149.84 )
+
+[node name="esya_bugday" parent="Yeryuzu" instance=ExtResource( 10 )]
+position = Vector2( -63.9455, -49.1085 )
+adet = 16

@@ -4,7 +4,7 @@ class_name Esya
 const tip: String = "esya"
 var id: int
 var esya_sahne
-var adet: int = 1
+export var adet: int = 1
 var yerde: bool = true
 
 func _ready() -> void:
@@ -34,7 +34,7 @@ func kuvvet_uygula(yon: Vector2, kuvvet: int):
                                               100)
     if Arac.getir_yuzde_sans(50):
         tork *= -1
-                   
+
     apply_torque_impulse(tork)
 
 func rastgele_kuvvet_uygula():

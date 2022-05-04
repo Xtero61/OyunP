@@ -40,7 +40,7 @@ _global_script_class_icons={
 
 config/name="OyunP"
 run/main_scene="res://Test Dunyasi/Test_Dunyasi.tscn"
-config/icon="res://icon.png"
+config/icon="res://Esyalar/Bugday/resim/icon.png"
 
 [autoload]
 
