@@ -1,8 +1,9 @@
 extends Node2D
 # Genel değsişken tanımlamaları
 
-const MAKS_ESYA_MIKTARI : int = 100
 const ESYA_DUSME_RASTGELE_KUVVET : int = 500
+const ESYA_DUSME_MAKS_DONUS_KUVVETI: int = 1000
+const MAKS_OYUNCU_FIRLATMA_KUVVETI: int = 500
 const OYUNCU_YOLU: String = "/root/Dunya/Yeryuzu/Oyuncu"
 const YERYUZU_YOLU: String = "/root/Dunya/Yeryuzu"
 const DUNYA_OLCEGI: Vector2 = Vector2(2, 2)
@@ -13,6 +14,7 @@ enum{
     ESYA_KAZMA,
     ESYA_ODUN,
     ESYA_TAS,
+    ESYA_BUGDAY,
 }
 
 enum{
@@ -25,7 +27,8 @@ enum{
 enum{
     ESYA_ID,
     ESYA_MAKS_DUSME,
-    ESYA_SAHNE
+    ESYA_MAKS_YIGIN_ADET,
+    ESYA_SAHNE,
 }
 
 enum{
@@ -35,11 +38,12 @@ enum{
 
 # Esya yüklemeleri
 const esya = [
-    # ESYA_ID     , MAKS_DUSME  , ESYA_SAHNE
-    [ ESYA_BALTA  , 1           , preload("res://Esyalar/Balta/Balta.tscn")],
-    [ ESYA_KAZMA  , 1           , preload("res://Esyalar/Kazma/Kazma.tscn")],
-    [ ESYA_ODUN   , 4           , preload("res://Esyalar/Odun/Odun.tscn")  ],
-    [ ESYA_TAS    , 4           , preload("res://Esyalar/Tas/Tas.tscn")    ],
+    # ESYA_ID     , MAKS_DUSME, MAKS_YIGIN_ADET  , ESYA_SAHNE                               
+    [ ESYA_BALTA  , 1         , 1                , preload("res://Esyalar/Balta/Balta.tscn")  ],
+    [ ESYA_KAZMA  , 1         , 1                , preload("res://Esyalar/Kazma/Kazma.tscn")  ],
+    [ ESYA_ODUN   , 4         , 99               , preload("res://Esyalar/Odun/Odun.tscn")    ],
+    [ ESYA_TAS    , 4         , 99               , preload("res://Esyalar/Tas/Tas.tscn")      ],
+    [ ESYA_BUGDAY , 4         , 99               , preload("res://Esyalar/Bugday/Bugday.tscn")],
 ]
 
 # Varlik yuklemeleri

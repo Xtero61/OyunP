@@ -1,12 +1,15 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Canli Varliklar/Oyuncu/Oyuncu.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Arayuz/Menu/menu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://dunyaR.tres" type="Texture" id=2]
 [ext_resource path="res://Varliklar/Kampatesi/KampAteşi.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Varliklar/Agac/Agac.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Varliklar/Tas/Tas.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Kullanilmamis Resim/TasToplSimge.png" type="Texture" id=6]
 [ext_resource path="res://Test Dunyasi/YSort.gd" type="Script" id=7]
+[ext_resource path="res://Esyalar/Kazma/Kazma.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Esyalar/Balta/Balta.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Esyalar/Bugday/Bugday.tscn" type="PackedScene" id=10]
 
 [sub_resource type="TileSet" id=1]
 0/name = "dunyaR.tres 0"
@@ -57,7 +60,7 @@
 1/z_index = 0
 
 [node name="Dunya" type="Node2D"]
-position = Vector2( 198.891, -102.783 )
+position = Vector2( 199.891, -102.783 )
 scale = Vector2( 2, 2 )
 script = ExtResource( 7 )
 
@@ -70,12 +73,21 @@ tile_data = PoolIntArray( -2424881, 1, 0, -2424880, 1, 0, -2424879, 1, 0, -24248
 
 [node name="Yeryuzu" type="YSort" parent="."]
 
+[node name="esya_kazma" parent="Yeryuzu" instance=ExtResource( 8 )]
+position = Vector2( -46.9455, -0.608501 )
+
+[node name="esya_kazma2" parent="Yeryuzu" instance=ExtResource( 8 )]
+position = Vector2( -78.9455, -4.6085 )
+
+[node name="esya_balta" parent="Yeryuzu" instance=ExtResource( 9 )]
+position = Vector2( 20.1815, -13.4543 )
+
+[node name="esya_balta2" parent="Yeryuzu" instance=ExtResource( 9 )]
+position = Vector2( -6.9455, -24.6085 )
+
 [node name="TasToplSimge" type="Sprite" parent="Yeryuzu"]
 position = Vector2( 104, 256 )
 texture = ExtResource( 6 )
-
-[node name="Oyuncu" parent="Yeryuzu" instance=ExtResource( 1 )]
-position = Vector2( -13.5, 54.5 )
 
 [node name="Agac" parent="Yeryuzu" instance=ExtResource( 4 )]
 position = Vector2( 71.7887, 19.326 )
@@ -147,3 +159,9 @@ position = Vector2( 292.302, 312.849 )
 
 [node name="KampAteşi" parent="Yeryuzu" instance=ExtResource( 3 )]
 position = Vector2( 126.056, 149.84 )
+
+[node name="esya_bugday" parent="Yeryuzu" instance=ExtResource( 10 )]
+position = Vector2( -63.9455, -49.1085 )
+adet = 16
+
+[node name="Menu" parent="." instance=ExtResource( 1 )]

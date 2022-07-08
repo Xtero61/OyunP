@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hotbar.png-416ccb916de86b84844c15825150cb7b.stex"
+path="res://.import/hotbar.png-fcf4fc7d6fafcdbea41aecfb13542fd1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Arayuz/Hizli Erisim/resim/hotbar.png"
-dest_files=[ "res://.import/hotbar.png-416ccb916de86b84844c15825150cb7b.stex" ]
+source_file="res://Arayuz/Envanter/resim/hotbar.png"
+dest_files=[ "res://.import/hotbar.png-fcf4fc7d6fafcdbea41aecfb13542fd1.stex" ]
 
 [params]
 

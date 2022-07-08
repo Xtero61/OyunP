@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Pixmen.png-1cde528c45fdb82a902b400bd52d94b9.stex"
+path="res://.import/Pixmen.png-8c7c4274f971853e142388ff6668ae04.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Canli Varliklar/Oyuncu/resim/Pixmen.png"
-dest_files=[ "res://.import/Pixmen.png-1cde528c45fdb82a902b400bd52d94b9.stex" ]
+source_file="res://Canli Varliklar/karakter/resim/Pixmen.png"
+dest_files=[ "res://.import/Pixmen.png-8c7c4274f971853e142388ff6668ae04.stex" ]
 
 [params]
 
