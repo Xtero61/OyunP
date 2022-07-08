@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 var yuvalar: Array = []
-onready var oyuncu: Oyuncu = get_parent().get_parent()
+onready var oyuncu: Karakter = get_parent().get_parent()
 var fare_ile_secilen_yuva: String = "yuva1"
 
 var eski_yuva_indeks: int = 1

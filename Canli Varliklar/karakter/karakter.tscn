@@ -1,9 +1,9 @@
 [gd_scene load_steps=62 format=2]
 
-[ext_resource path="res://Canli Varliklar/Oyuncu/resim/Pixmen.png" type="Texture" id=1]
-[ext_resource path="res://Canli Varliklar/Oyuncu/kod/Oyuncu.gd" type="Script" id=2]
+[ext_resource path="res://Canli Varliklar/karakter/resim/Pixmen.png" type="Texture" id=1]
+[ext_resource path="res://Canli Varliklar/karakter/kod/karakter.gd" type="Script" id=2]
 [ext_resource path="res://Arayuz/Envanter/Envanter.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Canli Varliklar/Oyuncu/resim/man axe_p_att.png" type="Texture" id=5]
+[ext_resource path="res://Canli Varliklar/karakter/resim/man axe_p_att.png" type="Texture" id=5]
 [ext_resource path="res://Gölge.png" type="Texture" id=6]
 
 [sub_resource type="Animation" id=1]
@@ -1037,16 +1037,10 @@ height = 3.41521
 [sub_resource type="CircleShape2D" id=56]
 radius = 40.0
 
-[node name="Oyuncu" type="KinematicBody2D"]
+[node name="Karakter" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
 [node name="Envanter" parent="." instance=ExtResource( 3 )]
-
-[node name="Camera2D" type="Camera2D" parent="."]
-scale = Vector2( 1.02151, 1 )
-current = true
-process_mode = 0
-smoothing_enabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 "anims/DuruşArka" = SubResource( 1 )
@@ -1091,7 +1085,7 @@ position = Vector2( 0, -10 )
 texture = ExtResource( 1 )
 hframes = 4
 vframes = 32
-frame = 6
+frame = 4
 
 [node name="man axe_p_att" type="Sprite" parent="."]
 visible = false

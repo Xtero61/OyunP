@@ -1,5 +1,5 @@
 extends KinematicBody2D
-class_name Oyuncu
+class_name Karakter
 
 const tip: String = "canli"
 const HIZLANMA = 700
@@ -32,6 +32,9 @@ enum{
     TAKLA
 }
 
+enum { SAG, SOL, YUKARI, ASAGI }
+var kmt = [ false, false, false, false ]
+
 func _ready():
     pass
 
@@ -51,7 +54,17 @@ func _process(delta):
             pass
         OL:
             pass
+    
+    if $kontrolcu.has_method("is_player"):
+    # RPC unreliable is faster but doesn't verify whether data has arrived or is intact
+        rpc_unreliable("network_update", position, durum, hareket_vektoru)
+
     tuslari_kontrol_et()
+
+sync func network_update(yeni_yer, yeni_durum, yeni_hareket_vektoru):
+    position = yeni_yer
+    durum = yeni_durum
+    hareket_vektoru = yeni_hareket_vektoru
 
 func dur_durumu(delta):
     if !elde_esya_var:
@@ -108,8 +121,8 @@ func tuslari_kontrol_et() -> void:
         return
 
     var hareket : Vector2 = Vector2.ZERO
-    hareket.x = Input.get_action_strength("SağaYürüme") - Input.get_action_strength("SolaYürüme")
-    hareket.y = Input.get_action_strength("AşağıYürüme") - Input.get_action_strength("YukarıYürüme")
+    hareket.x = int(kmt[SAG]) - int(kmt[SOL])
+    hareket.y = int(kmt[ASAGI]) - int(kmt[YUKARI])
     hareket = hareket.normalized()
 
     if hareket != Vector2.ZERO:

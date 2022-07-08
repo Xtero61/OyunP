@@ -9,15 +9,30 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Kontrolcu",
+"class": "AsilOyuncu",
+"language": "GDScript",
+"path": "res://CokluOyuncu/Kontrolcu/Kod/asil_oyuncu.gd"
+}, {
 "base": "RigidBody2D",
 "class": "Esya",
 "language": "GDScript",
 "path": "res://Esyalar/Kodlar/esya.gd"
 }, {
 "base": "KinematicBody2D",
-"class": "Oyuncu",
+"class": "Karakter",
 "language": "GDScript",
-"path": "res://Canli Varliklar/Oyuncu/kod/Oyuncu.gd"
+"path": "res://Canli Varliklar/karakter/kod/karakter.gd"
+}, {
+"base": "Node",
+"class": "Kontrolcu",
+"language": "GDScript",
+"path": "res://Kod/kontrolcu.gd"
+}, {
+"base": "Kontrolcu",
+"class": "UzakOyuncu",
+"language": "GDScript",
+"path": "res://CokluOyuncu/Kontrolcu/Kod/uzak_oyuncu.gd"
 }, {
 "base": "Area2D",
 "class": "VurusAlani",
@@ -30,8 +45,11 @@ _global_script_classes=[ {
 "path": "res://Arayuz/Envanter/kod/yuva.gd"
 } ]
 _global_script_class_icons={
+"AsilOyuncu": "",
 "Esya": "",
-"Oyuncu": "",
+"Karakter": "",
+"Kontrolcu": "",
+"UzakOyuncu": "",
 "VurusAlani": "",
 "Yuva": ""
 }

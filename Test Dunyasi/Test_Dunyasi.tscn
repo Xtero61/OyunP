@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Canli Varliklar/Oyuncu/Oyuncu.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Arayuz/Menu/menu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://dunyaR.tres" type="Texture" id=2]
 [ext_resource path="res://Varliklar/Kampatesi/KampAteşi.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Varliklar/Agac/Agac.tscn" type="PackedScene" id=4]
@@ -89,9 +89,6 @@ position = Vector2( -6.9455, -24.6085 )
 position = Vector2( 104, 256 )
 texture = ExtResource( 6 )
 
-[node name="Oyuncu" parent="Yeryuzu" instance=ExtResource( 1 )]
-position = Vector2( -19.9, 51.3915 )
-
 [node name="Agac" parent="Yeryuzu" instance=ExtResource( 4 )]
 position = Vector2( 71.7887, 19.326 )
 vurulmaSayi = 14
@@ -166,3 +163,5 @@ position = Vector2( 126.056, 149.84 )
 [node name="esya_bugday" parent="Yeryuzu" instance=ExtResource( 10 )]
 position = Vector2( -63.9455, -49.1085 )
 adet = 16
+
+[node name="Menu" parent="." instance=ExtResource( 1 )]

@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Arayuz/Menu/kod/menu.gd" type="Script" id=1]
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="StartServer" type="Button" parent="."]
+margin_left = 95.0
+margin_top = 121.0
+margin_right = 234.0
+margin_bottom = 177.0
+text = "Start Server"
+
+[node name="StopServer" type="Button" parent="."]
+margin_left = 255.0
+margin_top = 121.0
+margin_right = 394.0
+margin_bottom = 177.0
+disabled = true
+text = "No server running"
+
+[node name="Connect" type="Button" parent="."]
+margin_left = 300.0
+margin_top = 204.0
+margin_right = 396.0
+margin_bottom = 260.0
+text = "Connect"
+
+[node name="Quit" type="Button" parent="."]
+margin_left = 95.0
+margin_top = 290.0
+margin_right = 396.0
+margin_bottom = 346.0
+text = "Quit"
+
+[node name="IpAddr" type="TextEdit" parent="."]
+margin_left = 95.0
+margin_top = 204.0
+margin_right = 281.0
+margin_bottom = 260.0
+text = "192.168.1.133"
+
+[connection signal="button_up" from="StartServer" to="." method="_on_StartServer_button_up"]
+[connection signal="button_up" from="StopServer" to="." method="_on_StopServer_button_up"]
+[connection signal="button_up" from="Connect" to="." method="_on_Connect_button_up"]
+[connection signal="button_up" from="Quit" to="." method="_on_Quit_button_up"]
+[connection signal="text_changed" from="IpAddr" to="." method="_on_IpAddr_text_changed"]
